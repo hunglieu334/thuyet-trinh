@@ -1,0 +1,297 @@
+div.fileinputs {
+    position: relative;
+}
+
+div.fakefile {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+input.file {
+    width: 170px;
+}
+
+.nenanhHinh1 {
+    width: 760px;
+    height: 330px;
+}
+
+.nen1 {
+    border-radius: 20px;
+    background: linear-gradient(99.41deg, #ecf5fb 2.33%, #f8f9fc 96.77%);
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.khung1 {
+    width: 55%;
+    display: inline-block;
+}
+
+.khung1_1 {
+    padding: 20px;
+    vertical-align: top;
+    margin-top: 50px;
+}
+
+.khung2 {
+    width: 35%;
+    background-color: white;
+    border: solid white;
+    border-radius: 20px;
+    border-width: 1px;
+    padding: 40px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 100px;
+
+}
+
+.hr_1 {
+    width: 200px;
+    border-style: dashed;
+    display: inline-block;
+}
+
+h6 {
+    font-size: 80px;
+    margin: 0px;
+}
+
+
+
+.nenanhbutton1 {
+    font-size: 25px;
+    border: solid blue;
+    border-radius: 40px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: blue;
+    color: white;
+    box-shadow: 0px 0px 10px 10px rgb(225, 230, 240);
+}
+
+.hinhref {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.muc2 {
+    text-align: center;
+}
+
+.sapxep {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.sapxep_img {
+    width: 90%;
+    height: auto;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.al {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.number {
+    border: solid rgb(225, 237, 247);
+    background-color: rgb(225, 237, 247);
+    border-radius: 50px;
+    padding: 4px 8px;
+    margin-right: 5px;
+}
+
+.nen2 {
+    padding-top: 20px;
+    border-radius: 20px;
+    background: linear-gradient(99.41deg, #ecf5fb 2.33%, #f8f9fc 96.77%);
+}
+
+label {
+    color: blue;
+}
+
+.title3 {
+    font-size: 60px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.nen2_muc1 {
+    padding: 30px;
+    display: inline-block;
+    vertical-align: top;
+    width: 550px;
+
+}
+
+.hinhref8 {
+    width: 500px;
+    float: right;
+}
+
+.hinhref9 {
+    width: 500px;
+    float: left;
+}
+
+.muc3lon {
+    border-radius: 20px;
+    background-color: rgba(179, 175, 175, 0.575);
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.muc3 {
+    display: inline-block;
+    width: 560px;
+    margin: 20px;
+}
+
+.muc3_1 {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.muc3_2 {
+    display: inline-block;
+    width: 250px;
+    vertical-align: top;
+}
+
+.label3 {
+    border: solid white;
+    border-radius: 20px;
+    width: 100px;
+    background-color: white;
+    position: absolute;
+    left: 500px;
+    top: 450px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.muc_cuoi {
+    background-color: #f4f4f5;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+hr {
+    margin: 0px;
+    color: gray;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* .active,
+.collapsible:hover {
+    background-color: #dddde3;
+} */
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.daucong {
+    float: right;
+}
+
+@media screen and (max-width: 576px) {
+    .nen1 {
+        width: 576px;
+        margin: 15px;
+    }
+
+    .khung1_1 {
+        width: 500px;
+        text-align: center;
+    }
+
+    .khung2 {
+        width: 480px;
+        text-align: center;
+
+    }
+
+    .nenanhHinh1 {
+        width: 430px;
+        height: auto;
+    }
+
+    .muc2 {
+        width: 576px;
+        text-align: center;
+    }
+
+    .sapxep {
+        width: 400px;
+        margin-left: 100px;
+    }
+
+    .nen2 {
+        width: 576px;
+        margin: 19px;
+    }
+
+    .nen2_muc1 {
+        margin-right: 10px;
+        padding: 30px;
+        display: inline-block;
+        vertical-align: top;
+        width: 450px;
+    }
+
+    .hinhref8 {
+        width: 400px;           
+        left: 56px;
+    }
+
+    .hinhref9 {
+        width: 400px;
+        margin-left: 56px;
+    }
+
+    .muc3lon {
+        width: 576px;
+        margin: 18px;
+    }
+
+    .label3 {
+        position: absolute;
+        left: 450px;
+    }
+
+
+    .muc_cuoi {
+        width: 540px;
+        margin: 16px;
+    }
+
+}

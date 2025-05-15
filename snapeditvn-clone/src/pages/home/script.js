@@ -1,5 +1,5 @@
 // Import utility functions
-import { setupMobileMenu, setupLanguageSwitcher } from '../../assets/js/utils.js';
+//import { setupMobileMenu, setupLanguageSwitcher } from '../../assets/js/utils.js';
 
 // Navigation Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -214,10 +214,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Setup mobile menu
-    setupMobileMenu();
+    //setupMobileMenu();
 
     // Setup language switcher
-    setupLanguageSwitcher();
+    //setupLanguageSwitcher();
 
     // Add scroll animations
     const observerOptions = {
@@ -310,4 +310,22 @@ document.addEventListener('DOMContentLoaded', function() {
       navMenu.classList.toggle('active');
     });
   }
+
+  //Add expand collapse event
+  const coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    this.children[0].innerText = "+"
+                } else {
+                    content.style.display = "block";
+                    this.children[0].innerText = "-"
+                }
+            });
+        }
 }); 
