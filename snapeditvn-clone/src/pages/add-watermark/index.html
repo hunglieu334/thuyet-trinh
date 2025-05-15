@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thêm Watermark vào ảnh - SnapEdit.App</title>
+  <meta name="description" content="Thêm watermark vào ảnh online miễn phí. Tải lên ảnh và thêm logo, chữ hoặc hình ảnh làm watermark. Tải xuống ảnh đã thêm watermark ngay lập tức.">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../public/images/favicon.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
+          <span>SnapEdit</span>
+        </a>
+        <nav class="nav-menu">
+          <ul>
+            <li class="dropdown">
+              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                <li><a href="/compress-image">Nén ảnh</a></li>
+                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Giá</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="language-switcher">
+            <button class="language-btn">
+              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
+              <span>Tiếng Việt</span>
+              <span class="arrow">▼</span>
+            </button>
+            <ul class="language-menu">
+              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+            </ul>
+          </div>
+          <a href="#" class="login-link">Đăng nhập</a>
+          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
+          <button class="mobile-menu-btn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>Thêm Watermark vào ảnh</h1>
+          <p>Thêm logo, chữ hoặc hình ảnh làm watermark vào ảnh của bạn. Bảo vệ bản quyền hình ảnh với công cụ thêm watermark trực tuyến miễn phí.</p>
+        </div>
+      </section>
+
+      <!-- Upload Section -->
+      <section class="upload-section">
+        <div class="upload-container">
+          <div class="upload-area" id="uploadArea">
+            <img src="../../../public/images/icons/upload.svg" alt="Upload icon" class="upload-icon">
+            <h3>Kéo & thả ảnh vào đây</h3>
+            <p>hoặc</p>
+            <label for="fileInput" class="btn btn-primary">Chọn ảnh</label>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <p class="upload-hint">Hỗ trợ: JPG, PNG, WEBP (Tối đa 10MB)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editor Section -->
+      <section class="editor-section" id="editorSection" style="display: none;">
+        <div class="editor-container">
+          <div class="editor-preview">
+            <div class="preview-container">
+              <img id="previewImage" src="" alt="Preview">
+              <div id="watermarkContainer" class="watermark-container">
+                <!-- Watermark will be added here -->
+              </div>
+            </div>
+          </div>
+          <div class="editor-controls">
+            <div class="control-group">
+              <h3>Loại Watermark</h3>
+              <div class="watermark-type-buttons">
+                <button class="btn btn-outline active" data-type="text">Chữ</button>
+                <button class="btn btn-outline" data-type="image">Hình ảnh</button>
+              </div>
+            </div>
+
+            <!-- Text Watermark Controls -->
+            <div class="control-group" id="textControls">
+              <div class="form-group">
+                <label for="watermarkText">Nội dung</label>
+                <input type="text" id="watermarkText" placeholder="Nhập nội dung watermark">
+              </div>
+              <div class="form-group">
+                <label for="textColor">Màu chữ</label>
+                <input type="color" id="textColor" value="#ffffff">
+              </div>
+              <div class="form-group">
+                <label for="textSize">Kích thước</label>
+                <input type="range" id="textSize" min="12" max="72" value="24">
+              </div>
+              <div class="form-group">
+                <label for="textOpacity">Độ trong suốt</label>
+                <input type="range" id="textOpacity" min="0" max="100" value="50">
+              </div>
+            </div>
+
+            <!-- Image Watermark Controls -->
+            <div class="control-group" id="imageControls" style="display: none;">
+              <div class="form-group">
+                <label for="watermarkImage">Chọn hình ảnh</label>
+                <input type="file" id="watermarkImage" accept="image/*">
+              </div>
+              <div class="form-group">
+                <label for="imageSize">Kích thước</label>
+                <input type="range" id="imageSize" min="10" max="100" value="30">
+              </div>
+              <div class="form-group">
+                <label for="imageOpacity">Độ trong suốt</label>
+                <input type="range" id="imageOpacity" min="0" max="100" value="50">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <h3>Vị trí</h3>
+              <div class="position-grid">
+                <button class="position-btn" data-position="top-left">↖</button>
+                <button class="position-btn" data-position="top-center">↑</button>
+                <button class="position-btn" data-position="top-right">↗</button>
+                <button class="position-btn" data-position="middle-left">←</button>
+                <button class="position-btn" data-position="middle-center">•</button>
+                <button class="position-btn" data-position="middle-right">→</button>
+                <button class="position-btn" data-position="bottom-left">↙</button>
+                <button class="position-btn" data-position="bottom-center">↓</button>
+                <button class="position-btn" data-position="bottom-right">↘</button>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn btn-secondary" id="resetBtn">Đặt lại</button>
+              <button class="btn btn-primary" id="downloadBtn">Tải xuống</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="../../../public/images/logo.svg" alt="SnapEdit Logo">
+          <p>Chỉnh sửa ảnh online với AI</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Sản phẩm</h4>
+            <ul>
+              <li><a href="/vi/tools">Tất cả công cụ</a></li>
+              <li><a href="/vi/pricing">Giá</a></li>
+              <li><a href="/vi/api">API</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Công ty</h4>
+            <ul>
+              <li><a href="/vi/about">Về chúng tôi</a></li>
+              <li><a href="/vi/blog">Blog</a></li>
+              <li><a href="/vi/careers">Tuyển dụng</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Hỗ trợ</h4>
+            <ul>
+              <li><a href="/vi/help">Trung tâm trợ giúp</a></li>
+              <li><a href="/vi/contact">Liên hệ</a></li>
+              <li><a href="/vi/status">Trạng thái</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SnapEdit. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="../../../public/images/social/facebook.svg" alt="Facebook">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="../../../public/images/social/twitter.svg" alt="Twitter">
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="../../../public/images/social/instagram.svg" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

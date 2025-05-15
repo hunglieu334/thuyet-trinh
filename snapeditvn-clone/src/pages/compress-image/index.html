@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giảm dung lượng ảnh lên đến 95% - nén ảnh online | SnapEdit</title>
+  <meta name="description" content="Nén ảnh chất lượng cao. Hãy thử công cụ nén ảnh SnapEdit để giảm dung lượng các tệp PNG, JPG và JPEG. Trực tuyến, dễ sử dụng và miễn phí.">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="../../../public/images/favicon.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
+          <span>SnapEdit</span>
+        </a>
+        <nav class="nav-menu">
+          <ul>
+            <li class="dropdown">
+              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                <li><a href="/compress-image">Nén ảnh</a></li>
+                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Giá</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="language-switcher">
+            <button class="language-btn">
+              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
+              <span>Tiếng Việt</span>
+              <span class="arrow">▼</span>
+            </button>
+            <ul class="language-menu">
+              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+            </ul>
+          </div>
+          <a href="#" class="login-link">Đăng nhập</a>
+          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
+          <button class="mobile-menu-btn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Nén Ảnh Trực Tuyến Miễn Phí</h1>
+        <p>SnapEdit cung cấp thêm tính năng mới giúp giảm dung lượng ảnh lên đến 95%. Công cụ nén ảnh này giúp tối ưu hóa trang web, quản lý lưu trữ và truyền dữ liệu. Hãy thử ngay bây giờ!</p>
+        <button class="btn btn-primary upload-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+          Tải lên hình ảnh
+        </button>
+      </div>
+      <div class="hero-image">
+        <img src="../../../public/images/compress-image/hero-banner.webp" alt="Nén ảnh trực tuyến miễn phí">
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="upload-section">
+    <div class="container">
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+        </div>
+        <h3>Hoặc chỉ cần thả vào đây</h3>
+        <p>Ctrl + V để dán hình ảnh</p>
+        <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+      </div>
+
+      <div class="sample-images">
+        <p>Không có hình ảnh? Thử một trong những cái này</p>
+        <div class="sample-grid">
+          <div class="sample-image" data-src="../../../public/images/samples/sample1.jpg">
+            <img src="../../../public/images/samples/sample1.jpg" alt="Sample image 1">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample2.jpg">
+            <img src="../../../public/images/samples/sample2.jpg" alt="Sample image 2">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample3.jpg">
+            <img src="../../../public/images/samples/sample3.jpg" alt="Sample image 3">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample4.jpg">
+            <img src="../../../public/images/samples/sample4.jpg" alt="Sample image 4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">Cách Nén Ảnh Trên Website, Điện Thoại?</h2>
+      <p class="section-description">Quá trình nén ảnh bằng ba bước đơn giản như sau:</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-image">
+            <img src="../../../public/images/compress-image/step-1.webp" alt="Tải lên">
+          </div>
+          <h3>Tải Lên</h3>
+          <p>Tải ảnh lên công cụ nén ảnh SnapEdit. Ở trang tải lên người dùng có thể chọn thêm nhiều file ảnh cần nén dung lượng.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-image">
+            <img src="../../../public/images/compress-image/step-2.webp" alt="Nén ảnh">
+          </div>
+          <h3>Nén ảnh</h3>
+          <p>Sau khi tất cả các ảnh được tải lên, nhấn vào nút "Nén Ngay Bây Giờ" để giảm dung lượng. Chờ cho đến khi quá trình hoàn tất.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-image">
+            <img src="../../../public/images/compress-image/step-3.webp" alt="Tải xuống">
+          </div>
+          <h3>Tải Xuống</h3>
+          <p>Tải các ảnh đã được nén xuống và yên tâm sử dụng. Ảnh tải xuống không chứa watermark.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="app-download">
+    <div class="container">
+      <div class="app-content">
+        <div class="app-text">
+          <h2>Tải Ứng Dụng Di Động SnapEdit</h2>
+          <p>Ứng dụng SnapEdit có sẵn trên Apple Store và Google Play Store. Ứng dụng của chúng tôi được sử dụng trên toàn thế giới để cải thiện chất lượng ảnh.</p>
+          <div class="app-buttons">
+            <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499" target="_blank" class="app-button">
+              <img src="../../../public/images/icons/app-store-badge.svg" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove" target="_blank" class="app-button">
+              <img src="../../../public/images/icons/google-play-badge.svg" alt="Google Play">
+            </a>
+          </div>
+        </div>
+        <div class="app-qr">
+          <img src="../../../public/images/qrcode.png" alt="QR Code SnapEdit">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-header">
+        <h2>Công Cụ Giảm Dung Lượng KB<br>Ảnh Hữu Ích</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="../../../public/images/compress-image/benefit-1.webp" alt="Tăng tốc độ trang web">
+          </div>
+          <div class="benefit-content">
+            <h3>Tăng Tốc Độ Trang Web</h3>
+            <p>Nén ảnh để tối ưu hóa trang web một cách nhanh chóng và dễ dàng. Công cụ nén ảnh SnapEdit là công cụ không thể thiếu cho các nhà phát triển web và quản trị viên web. Giảm kích thước ảnh lớn sẽ tăng tốc độ trang web.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+
+        <div class="benefit-card reverse">
+          <div class="benefit-content">
+            <h3>Tăng Tốc Độ Truyền Dữ Liệu</h3>
+            <p>Công cụ nén ảnh của SnapEdit cung cấp giải pháp cho việc kết nối chậm và băng thông hạn chế. Việc nén dung lượng ảnh, làm tăng tốc độ truyền dữ liệu, cải thiện giao tiếp và tiết kiệm thời gian.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+          <div class="benefit-image">
+            <img src="../../../public/images/compress-image/benefit-2.webp" alt="Tăng tốc độ truyền dữ liệu">
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-image">
+            <img src="../../../public/images/compress-image/benefit-3.webp" alt="Tối ưu quản lý lưu trữ">
+          </div>
+          <div class="benefit-content">
+            <h3>Tối Ưu Quản Lý Lưu Trữ</h3>
+            <p>Công cụ nén ảnh của chúng tôi cũng giúp quản lý lưu trữ đám mây một cách hiệu quả hơn. Việc giảm dung lượng ảnh giúp bạn giải phóng đáng kể không gian và giảm chi phí lưu trữ. Điều này hữu ích cho việc lưu trữ, quản lý ảnh và làm việc với các thư viện ảnh lớn.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.25-11.25v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0zm0 4v4.25a.75.75 0 0 1-1.5 0v-4.25a.75.75 0 0 1 1.5 0z"/>
+            </svg>
+          </div>
+          <h3>Nén ảnh chất lượng cao</h3>
+          <p>SnapEdit sử dụng phương pháp nén tập tin lossy nhằm loại bỏ dữ liệu không quan trọng với mắt người dùng. Phương pháp này dẫn đến tỷ lệ nén cao hơn nhiều so với phương pháp nén lossless mà vẫn đảm bảo chất lượng ảnh.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+              <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM6.25 5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+            </svg>
+          </div>
+          <h3>Chấp nhận nhiều định dạng ảnh</h3>
+          <p>Công cụ nén ảnh của chúng tôi chấp nhận các tập PNG, JPEG và JPG. Bạn có thể tải lên tối đa 50 ảnh mỗi lần để xử lý hàng loạt.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+            </svg>
+          </div>
+          <h3>An toàn khi sử dụng</h3>
+          <p>Việc nén ảnh được thực hiện bởi máy khách, không phải trên máy chủ, do đó kết quả trả về nhanh chóng và an toàn. Điều này đảm bảo an toàn cho người dùng và không lưu trữ hình ảnh trên SnapEdit.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M5.33801829,10.6771004 C5.11869548,10.2695612 5,9.80401104 5,9.3 C5,7.49543488 6.49543488,6 8.3,6 C10.1045651,6 11.6,7.49543488 11.6,9.3 C11.6,11.1045651 10.1045651,12.6 8.3,12.6 C7.79598896,12.6 7.33043881,12.4813045 6.92289958,12.2619817 L5,13 L5.33801829,10.6771004 Z M8.3,3 C4.85726271,3 2,5.85726271 2,9.3 C2,10.4813465 2.31521814,11.5782805 2.86643574,12.5296433 L2,17 L6.47035666,15.1335643 C7.42171947,15.6847819 8.5186535,16 9.7,16 C13.1427373,16 16,13.1427373 16,9.7 C16,6.25726271 13.1427373,3.4 9.7,3.4 C9.56510551,3.4 9.43131935,3.40296901 9.29869865,3.40877358 C8.9723026,3.13859568 8.65306202,2.86356118 8.34231256,2.58377403 C8.32826931,2.58126835 8.31419893,2.57880603 8.3,2.57638699 L8.3,3 Z"></path>
+            </svg>
+          </div>
+          <h3>Dễ sử dụng và miễn phí</h3>
+          <p>Công cụ nén ảnh online dễ sử dụng và hoàn toàn miễn phí. Giao diện dễ sử dụng, quy trình đơn giản và bạn có thể sử dụng công cụ này trên bất kỳ thiết bị nào có kết nối internet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Câu Hỏi Thường Gặp về Công cụ Nén Ảnh SnapEdit</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Cách hoạt động của thuật toán nén là gì?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Thuật toán nén ảnh của chúng tôi sử dụng phương pháp nén lossy để giảm kích thước tệp tin mà vẫn duy trì chất lượng hình ảnh tốt nhất có thể. Quá trình này loại bỏ dữ liệu không cần thiết, tối ưu hóa bảng màu và áp dụng các kỹ thuật nén chuyên biệt cho từng định dạng.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tỷ lệ nén tối đa có thể là bao nhiêu?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Tỷ lệ nén tối đa có thể đạt đến 95% trong một số trường hợp, tùy thuộc vào nội dung hình ảnh và định dạng ban đầu. Hình ảnh có nhiều vùng màu đơn sắc thường có thể được nén hiệu quả hơn so với hình ảnh phức tạp với nhiều chi tiết.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể điều chỉnh tỷ lệ nén/chất lượng không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, trong phiên bản nâng cấp của công cụ, bạn có thể điều chỉnh mức độ nén để cân bằng giữa kích thước tệp và chất lượng hình ảnh. Phiên bản miễn phí sử dụng mức nén tối ưu mặc định để cân bằng giữa chất lượng và kích thước.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>SnapEdit có hỗ trợ nén lossless không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, SnapEdit hỗ trợ cả nén lossy và lossless. Tùy thuộc vào nhu cầu của bạn, bạn có thể chọn nén lossless để giữ nguyên chất lượng hình ảnh gốc hoặc nén lossy để giảm kích thước tệp đáng kể.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể giảm kích thước tập ảnh GIF hoặc các ảnh động không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, công cụ của chúng tôi hỗ trợ nén các tệp GIF và ảnh động. Quá trình này tối ưu hóa bảng màu, giảm số lượng khung hình khi cần thiết và áp dụng thuật toán nén đặc biệt dành cho ảnh động mà vẫn giữ nguyên hiệu ứng chuyển động.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể nén nhiều ảnh cùng lúc không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, công cụ nén ảnh của chúng tôi cho phép bạn tải lên và nén nhiều hình ảnh cùng một lúc, lên đến 50 tệp. Tính năng này tiết kiệm thời gian và giúp bạn xử lý hàng loạt ảnh một cách hiệu quả.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Công cụ có hỗ trợ chuyển đổi định dạng khi nén không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, bạn có thể nén và đồng thời chuyển đổi định dạng ảnh. Ví dụ, bạn có thể chuyển đổi ảnh PNG sang JPG để giảm kích thước thêm nữa. Để sử dụng tính năng này, chọn định dạng đầu ra mong muốn trong quá trình nén.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể giảm kích thước ảnh xuống 20 KB không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có thể đạt được kích thước mục tiêu 20KB tùy thuộc vào kích thước và chất lượng ban đầu của hình ảnh. Đối với những yêu cầu kích thước cụ thể, công cụ của chúng tôi cung cấp tùy chọn mục tiêu kích thước trong phiên bản nâng cấp, cho phép bạn nén hình ảnh đến gần với kích thước mong muốn nhất có thể mà vẫn duy trì chất lượng chấp nhận được.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/utils.js" type="module"></script>
+  <script src="../../assets/js/main.js" type="module"></script>
+  <script src="./script.js" type="module"></script>
+  <script>
+    // Load header and footer
+    fetch('../../layouts/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('../../layouts/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi định dạng ảnh - SnapEdit.App</title>
+  <meta name="description" content="Chuyển đổi ảnh sang các định dạng khác nhau như JPG, PNG, WEBP, GIF, TIFF, BMP, SVG, PDF. Công cụ chuyển đổi ảnh trực tuyến miễn phí.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
+          <span>SnapEdit</span>
+        </a>
+        <nav class="nav-menu">
+          <ul>
+            <li class="dropdown">
+              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                <li><a href="/compress-image">Nén ảnh</a></li>
+                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Giá</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="language-switcher">
+            <button class="language-btn">
+              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
+              <span>Tiếng Việt</span>
+              <span class="arrow">▼</span>
+            </button>
+            <ul class="language-menu">
+              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+            </ul>
+          </div>
+          <a href="#" class="login-link">Đăng nhập</a>
+          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
+          <button class="mobile-menu-btn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Đổi định dạng ảnh trong 1 nhấp chuột</h1>
+        <p>Công cụ chuyển đổi ảnh SnapEdit giúp chuyển ảnh dạng PNG sang JPG, JPG sang PDF hoặc TIFF sang JPG trong chớp mắt. Chuyển đổi chất lượng cao - Tải lên an toàn - Xử lý hàng loạt.</p>
+        <button class="btn btn-primary upload-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+          Tải lên hình ảnh
+        </button>
+      </div>
+      <div class="hero-image">
+        <div class="format-icons">
+          <div class="format-icon jpg">JPG</div>
+          <div class="format-icon png">PNG</div>
+          <div class="format-icon webp">WEBP</div>
+          <div class="format-icon tiff">TIFF</div>
+          <div class="format-icon pdf">PDF</div>
+        </div>
+        <img src="../../../public/images/convert-image/hero-banner.webp" alt="Đổi định dạng ảnh trong 1 nhấp chuột">
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="upload-section">
+    <div class="container">
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+        </div>
+        <h3>Hoặc chỉ cần thả vào đây</h3>
+        <p>Ctrl + V để dán hình ảnh</p>
+        <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+      </div>
+
+      <div class="sample-images">
+        <p>Không có hình ảnh? Thử một trong những cái này</p>
+        <div class="sample-grid">
+          <div class="sample-image" data-src="../../../public/images/samples/sample1.jpg">
+            <img src="../../../public/images/samples/sample1.jpg" alt="Sample image 1">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample2.jpg">
+            <img src="../../../public/images/samples/sample2.jpg" alt="Sample image 2">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample3.jpg">
+            <img src="../../../public/images/samples/sample3.jpg" alt="Sample image 3">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample4.jpg">
+            <img src="../../../public/images/samples/sample4.jpg" alt="Sample image 4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">Cách đổi định dạng ảnh bất kỳ trên SnapEdit?</h2>
+      <p class="section-description">Người dùng dễ dàng thay đổi định dạng hình ảnh thông qua bộ chuyển đổi của SnapEdit. Công cụ tương thích với các thiết bị. Dưới đây là các bước để thực hiện:</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-image">
+            <img src="../../../public/images/convert-image/step-1.webp" alt="Tải ảnh lên">
+          </div>
+          <h3>Tải ảnh lên</h3>
+          <p>Người dùng tải lên tập tin hình ảnh vào công cụ chuyển của SnapEdit. Công cụ sẽ tự động nhận diện định dạng nguồn.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-image">
+            <img src="../../../public/images/convert-image/step-2.webp" alt="Chọn định dạng đích">
+          </div>
+          <h3>Chọn định dạng đích</h3>
+          <p>Chọn định dạng đích bạn muốn chuyển đổi.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-image">
+            <img src="../../../public/images/convert-image/step-3.webp" alt="Chuyển đổi">
+          </div>
+          <h3>Chuyển đổi</h3>
+          <p>Nhấp vào nút "Chuyển Đổi Ngay". Sau khi hoàn thành, tải xuống hình ảnh đã định dạng mới vào thiết bị của bạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="app-download">
+    <div class="container">
+      <div class="app-content">
+        <div class="app-text">
+          <h2>Tải Ứng Dụng Di Động SnapEdit</h2>
+          <p>Ứng dụng SnapEdit có sẵn trên Apple Store & Google Play Store. Ứng dụng của chúng tôi đã được người dùng trên khắp thế giới sử dụng để cải thiện chất lượng ảnh.</p>
+          <div class="app-buttons">
+            <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499" target="_blank" class="app-button">
+              <img src="../../../public/images/app-store-badge.svg" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove" target="_blank" class="app-button">
+              <img src="../../../public/images/google-play-badge.svg" alt="Google Play">
+            </a>
+          </div>
+        </div>
+        <div class="app-qr">
+          <img src="../../../public/images/qrcode.png" alt="QR Code SnapEdit">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-header">
+        <h2>SnapEdit Image Converter:<br /><span>Nhanh hơn, An toàn hơn</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="../../../public/images/convert-image/feature-1.webp" alt="Đổi định dạng ảnh phù hợp cho website">
+          </div>
+          <div class="feature-content">
+            <h3>Đổi định dạng ảnh phù hợp cho website</h3>
+            <p>SnapEdit giúp chuyển đổi ảnh sang các định dạng nén như JPEG hoặc WEBP để giảm kích thước ảnh cũng như cải thiện hiệu suất của trang web. Hãy để SnapEdit tối ưu hóa hình ảnh trên các nền tảng online.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+
+        <div class="feature-card reverse">
+          <div class="feature-content">
+            <h3>Chuyển định dạng cho chỉnh sửa ảnh</h3>
+            <p>Công cụ này giúp chuyển đổi hình ảnh sang các định dạng khác nhau để dễ dàng chỉnh sửa và làm việc. Ví dụ: chuyển đổi JPEG sang PNG để dễ dàng xóa nền, chuyển đổi PNG sang PDF để tạo tài liệu hoặc chuyển đổi HEIC sang PNG để chỉnh sửa trong phần mềm chỉnh sửa ảnh khác.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+          <div class="feature-image">
+            <img src="../../../public/images/convert-image/feature-2.webp" alt="Chuyển định dạng cho chỉnh sửa ảnh">
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="../../../public/images/convert-image/feature-3.webp" alt="Chuyển ảnh sang các định dạng được hỗ trợ rộng rãi">
+          </div>
+          <div class="feature-content">
+            <h3>Chuyển ảnh sang các định dạng được hỗ trợ rộng rãi</h3>
+            <p>Công cụ chuyển đổi hình ảnh của SnapEdit giúp lưu trữ các hình ảnh cũ bằng cách chuyển chúng sang các định dạng hiện đại và được hỗ trợ rộng rãi. Điều này làm giảm nguy cơ các định dạng cũ không thể truy cập được hoặc không tương thích.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+              <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM6.25 5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+            </svg>
+          </div>
+          <h3>Hỗ trợ các định dạng ảnh phổ biến</h3>
+          <p>Bộ chuyển đổi hình ảnh SnapEdit hỗ trợ bất kỳ định dạng phổ biến bao gồm jpg, png, pdf, tiff, webp. Bạn có thể chuyển đổi JPG sang PNG cho độ họa logo và hình ảnh với nền trong suốt, chuyển đổi JPG sang TIFF cho in ấn, chuyển đổi WEBP sang PNG cho việc chỉnh sửa chuyên nghiệp, chuyển đổi PNG sang JPG cho việc nén hình ảnh.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.25-11.25v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0zm0 4v4.25a.75.75 0 0 1-1.5 0v-4.25a.75.75 0 0 1 1.5 0z"/>
+            </svg>
+          </div>
+          <h3>Giữ chất lượng và metadata</h3>
+          <p>Chất lượng hình ảnh được giữ nguyên như hình ảnh ban đầu. SnapEdit không làm giảm chất lượng hình ảnh. Ngoài ra, thông tin quan trọng của ảnh và thông báo bản quyền cũng được giữ lại.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M12.79 5.137A.5.5 0 0 0 12 5.5h-1.172l.728 3.634a.5.5 0 1 1-.988.197l-.083-.416L8.93 11.828a.5.5 0 0 1-.78.596L7 11.269v2.231a.5.5 0 0 1-1 0v-2.23l-1.15 1.154a.5.5 0 0 1-.782-.592l1.56-2.913-.083.416a.5.5 0 1 1-.988-.197L5.287 5.5H4.5a.5.5 0 0 0-.376.833l3.5 4.375a.5.5 0 0 0 .752 0l3.5-4.375a.5.5 0 0 0 .086-.596z"/>
+            </svg>
+          </div>
+          <h3>Xử lý nhanh hơn, an toàn hơn</h3>
+          <p>Trong khi các công cụ khác tải file lên máy chủ để xử lý chuyển đổi, SnapEdit thực hiện việc đó trực tiếp ở phía máy khách. Vì vậy sẽ không có bất kỳ vấn đề bảo mật nào với hình ảnh của người dùng. Hơn nữa, thời gian xử lý cũng nhanh hơn.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+            </svg>
+          </div>
+          <h3>Đổi format ảnh hàng loạt</h3>
+          <p>SnapEdit có thể xử lý tối đa 50 ảnh cùng một lúc. Tải nhiều tập ảnh lên cùng lúc, chọn định dạng mong muốn và nhấp vào nút chuyển đổi để quá trình được thực hiện nhanh chóng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Câu hỏi thường gặp về đổi định dạng ảnh trên SnapEdit</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Công cụ chuyển đổi của SnapEdit có thay đổi kích thước ảnh không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Mặc định, công cụ của chúng tôi giữ nguyên kích thước ảnh trong quá trình chuyển đổi định dạng. Tuy nhiên, bạn có thể tùy chọn thay đổi kích thước trong quá trình chuyển đổi bằng cách chọn tùy chọn "Điều chỉnh kích thước" và nhập kích thước mới.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Công cụ chuyển đổi có ảnh hưởng đến chất lượng hình ảnh không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Công cụ của chúng tôi cố gắng duy trì chất lượng hình ảnh tốt nhất có thể trong quá trình chuyển đổi. Tuy nhiên, một số định dạng như JPG sử dụng thuật toán nén lossy, có thể gây ra một số mất mát chất lượng rất nhỏ. Định dạng như PNG duy trì chất lượng đầy đủ, nhưng có thể tạo ra file lớn hơn.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>SnapEdit image converter có miễn phí không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, bạn có thể chuyển đổi định dạng ảnh miễn phí trên SnapEdit. Chúng tôi cung cấp chuyển đổi 10 ảnh mỗi ngày miễn phí. Nếu bạn cần xử lý nhiều hình ảnh hơn, bạn có thể xem xét nâng cấp lên một trong các gói cao cấp của chúng tôi.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Bộ chuyển đổi định dạng ảnh của SnapEdit có dùng tại sao không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, công cụ của chúng tôi hoạt động trực tiếp trên trình duyệt web của bạn mà không yêu cầu cài đặt phần mềm hoặc đăng ký. Bạn có thể truy cập và sử dụng nó trên bất kỳ thiết bị nào có kết nối internet, bao gồm điện thoại di động, máy tính bảng và máy tính để bàn.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Bộ chuyển đổi định dạng ảnh SnapEdit có cắt watermark sau khi tải xuống không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Không, công cụ của chúng tôi không thêm watermark nào vào hình ảnh đầu ra của bạn. Hình ảnh của bạn sẽ được chuyển đổi đúng như bạn mong muốn, không có bất kỳ nhãn hiệu hoặc watermark nào được thêm vào. Nếu hình ảnh gốc của bạn đã có watermark, nó sẽ vẫn giữ nguyên trong quá trình chuyển đổi.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Làm thế nào để chuyển đổi ảnh trên iPhone?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có hai cách để chuyển đổi hình ảnh trên iPhone: Sử dụng trình duyệt Safari để truy cập vào trang web của chúng tôi và sử dụng công cụ trực tuyến, hoặc tải xuống ứng dụng SnapEdit từ App Store. Cả hai phương pháp đều cho phép bạn dễ dàng chuyển đổi định dạng hình ảnh trên thiết bị di động của mình.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/utils.js" type="module"></script>
+  <script src="../../assets/js/main.js" type="module"></script>
+  <script src="./script.js" type="module"></script>
+  <script>
+    // Load header and footer
+    fetch('../../layouts/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('../../layouts/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

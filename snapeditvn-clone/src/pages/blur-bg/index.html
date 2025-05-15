@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Làm mờ nền ảnh - SnapEdit.App</title>
+  <meta name="description" content="Làm mờ nền ảnh trực tuyến miễn phí. Công cụ làm mờ nền ảnh chuyên nghiệp, dễ sử dụng và nhanh chóng.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
+          <span>SnapEdit</span>
+        </a>
+        <nav class="nav-menu">
+          <ul>
+            <li class="dropdown">
+              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                <li><a href="/compress-image">Nén ảnh</a></li>
+                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Giá</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="language-switcher">
+            <button class="language-btn">
+              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
+              <span>Tiếng Việt</span>
+              <span class="arrow">▼</span>
+            </button>
+            <ul class="language-menu">
+              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+            </ul>
+          </div>
+          <a href="#" class="login-link">Đăng nhập</a>
+          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
+          <button class="mobile-menu-btn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Làm mờ nền ảnh</h1>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Làm mờ nền ảnh miễn phí</h1>
+        <p>Biến hóa hình ảnh ngay lập tức với công cụ <a href="#">làm mờ nền ảnh</a> của SnapEdit. Thử miễn phí!</p>
+        <button class="btn btn-primary upload-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+          Tải lên hình ảnh
+        </button>
+      </div>
+      <div class="hero-image">
+        <div class="before-after-container">
+          <img src="../../../public/images/blur-bg/hero-before.webp" alt="Ảnh gốc trước khi làm mờ nền" class="before-image">
+          <img src="../../../public/images/blur-bg/hero-after.webp" alt="Ảnh sau khi làm mờ nền" class="after-image">
+          <div class="slider-handle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section class="upload-section">
+    <div class="container">
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+          </svg>
+        </div>
+        <h3>Hoặc chỉ cần thả vào đây</h3>
+        <p>Ctrl + V để dán hình ảnh</p>
+        <input type="file" id="fileInput" class="file-input" accept="image/*">
+      </div>
+
+      <div class="sample-images">
+        <p>Không có hình ảnh? Thử một trong những cái này</p>
+        <div class="sample-grid">
+          <div class="sample-image" data-src="../../../public/images/samples/sample1.jpg">
+            <img src="../../../public/images/samples/sample1.jpg" alt="Sample image 1">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample2.jpg">
+            <img src="../../../public/images/samples/sample2.jpg" alt="Sample image 2">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample3.jpg">
+            <img src="../../../public/images/samples/sample3.jpg" alt="Sample image 3">
+          </div>
+          <div class="sample-image" data-src="../../../public/images/samples/sample4.jpg">
+            <img src="../../../public/images/samples/sample4.jpg" alt="Sample image 4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps Section -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">Cách làm mờ nền ảnh online</h2>
+      <p class="section-description">Không cần học cài đặt các thông số phức tạp về khẩu độ và ống kính ở máy ảnh; công cụ của chúng tôi giúp bạn có ảnh với nền mờ ảo và làm nổi bật đối tượng chủ thể chỉ với vài cú nhấp chuột.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-image">
+            <img src="../../../public/images/blur-bg/step-1.webp" alt="Tải ảnh lên">
+          </div>
+          <h3>Tải ảnh lên</h3>
+          <p>Tải lên hoặc kéo thả ảnh vào công cụ làm mờ nền</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-image">
+            <img src="../../../public/images/blur-bg/step-2.webp" alt="Làm mờ nền với hiệu ứng AI">
+          </div>
+          <h3>Làm mờ nền với hiệu ứng AI</h3>
+          <p>Sau khi tải ảnh lên, công cụ sẽ tự động làm mờ phông nền với mức mặc định là 20. Trong bước này, bạn có thể chọn hiệu ứng và điều chỉnh mức độ làm mờ theo ý thích.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-image">
+            <img src="../../../public/images/blur-bg/step-3.webp" alt="Lưu ảnh về máy">
+          </div>
+          <h3>Lưu ảnh về máy</h3>
+          <p>Tải ảnh mới của bạn với nền đã được làm mờ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section -->
+  <section class="app-download">
+    <div class="container">
+      <div class="app-content">
+        <div class="app-text">
+          <h2>Tải Ứng Dụng Di Động SnapEdit</h2>
+          <p>Ứng dụng SnapEdit có sẵn trên Apple Store & Google Play Store. Ứng dụng của chúng tôi đã được sử dụng bởi người dùng trên khắp thế giới để làm sắc nét ảnh.</p>
+          <div class="app-buttons">
+            <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499" target="_blank" class="app-button">
+              <img src="../../../public/images/app-store-badge.svg" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove" target="_blank" class="app-button">
+              <img src="../../../public/images/google-play-badge.svg" alt="Google Play">
+            </a>
+          </div>
+        </div>
+        <div class="app-qr">
+          <img src="../../../public/images/qrcode.png" alt="QR Code SnapEdit">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-header">
+        <h2>Công Cụ Làm Mờ Nền<br /><span>Cho Viên Hoàn Hảo</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image">
+            <div class="before-after">
+              <img src="../../../public/images/blur-bg/feature-1-before.webp" alt="Ảnh chân dung trước khi làm mờ nền" class="before-img">
+              <img src="../../../public/images/blur-bg/feature-1-after.webp" alt="Ảnh chân dung sau khi làm mờ nền" class="after-img">
+              <div class="divider">
+                <div class="arrow-left"></div>
+                <div class="arrow-right"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <h3>Thêm chiều sâu cho ảnh chân dung</h3>
+            <p>Sau khi được làm mờ nền, ảnh chân dung trở nên có chiều sâu hơn, thu hút sự chú ý vào các đặc điểm trên khuôn mặt người được chụp ảnh.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+
+        <div class="feature-card reverse">
+          <div class="feature-content">
+            <h3>Làm nổi bật ảnh sản phẩm</h3>
+            <p>Tương tự như ảnh chân dung, công cụ giúp làm mờ nền giúp tập trung sự chú ý vào sản phẩm. Nó làm nổi bật các đặc điểm chính và tạo ra những hình ảnh thương mại điện tử hấp dẫn thúc đẩy doanh số.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+          <div class="feature-image">
+            <div class="before-after">
+              <img src="../../../public/images/blur-bg/feature-2-before.webp" alt="Ảnh sản phẩm trước khi làm mờ nền" class="before-img">
+              <img src="../../../public/images/blur-bg/feature-2-after.webp" alt="Ảnh sản phẩm sau khi làm mờ nền" class="after-img">
+              <div class="divider">
+                <div class="arrow-left"></div>
+                <div class="arrow-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image">
+            <div class="before-after">
+              <img src="../../../public/images/blur-bg/feature-3-before.webp" alt="Ảnh cảnh vật trước khi làm mờ nền" class="before-img">
+              <img src="../../../public/images/blur-bg/feature-3-after.webp" alt="Ảnh cảnh vật sau khi làm mờ nền" class="after-img">
+              <div class="divider">
+                <div class="arrow-left"></div>
+                <div class="arrow-right"></div>
+              </div>
+            </div>
+          </div>
+          <div class="feature-content">
+            <h3>Tách biệt các yếu tố có thể trong cảnh</h3>
+            <p>Công cụ cũng giúp cho các nhiếp ảnh gia muốn thu hút sự chú ý vào các yếu tố cụ thể trong ảnh bằng cách làm mờ mọi thứ khác xung quanh. Từ đó những ảnh chụp cảnh vật cũng trở nên hấp dẫn hơn.</p>
+            <a href="#" class="btn btn-outline">Thử ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.25-11.25v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0zm0 4v4.25a.75.75 0 0 1-1.5 0v-4.25a.75.75 0 0 1 1.5 0z"/>
+            </svg>
+          </div>
+          <h3>Kết quả tốt hơn</h3>
+          <p>Công cụ tự động xác định chủ thể của ảnh chính xác, tạo hiệu ứng làm mờ mượt mà, tự nhiên. So với các công cụ khác, nó mang đến kết quả tốt hơn với đường viền không lem, sắc nét.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M2 6h5v8.5a.5.5 0 0 0 1 0V6h5a.5.5 0 0 0 0-1H9V.5a.5.5 0 0 0-1 0V5H3a.5.5 0 0 0 0 1z"/>
+            </svg>
+          </div>
+          <h3>Hiệu ứng sáng tạo</h3>
+          <p>SnapEdit có 5 hiệu ứng làm mờ ảnh: cổ điển, pixelate, chuyển động, radial, và zoom. Bạn có thể tạo nền bokeh với ánh sáng mờ ảo đẹp mắt.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
+            </svg>
+          </div>
+          <h3>Tải xuống HD</h3>
+          <p>Thêm vào đó, bạn có thể tải xuống hình ảnh đã cải thiện với chất lượng HD.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+          </div>
+          <h3>Làm mờ nền trực tuyến</h3>
+          <p>Không cần cài đặt ứng dụng, bạn có thể sử dụng công cụ này trên điện thoại iPhone, Samsung, máy tính bảng hoặc PC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Câu hỏi thường gặp</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Có miễn phí để làm mờ nền trên SnapEdit không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, công cụ làm mờ nền cơ bản của SnapEdit hoàn toàn miễn phí. Bạn có thể làm mờ nền của tối đa 5 hình ảnh mỗi ngày mà không cần đăng ký. Phiên bản nâng cấp của chúng tôi cung cấp các tùy chọn làm mờ nâng cao và không giới hạn số lượng hình ảnh.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Độ tương phản tối đa là bao nhiêu?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Công cụ của chúng tôi cung cấp thanh trượt để điều chỉnh độ làm mờ từ 1 đến 100. Mức 1 tạo ra hiệu ứng làm mờ rất nhẹ, trong khi mức 100 tạo ra hiệu ứng làm mờ mạnh mẽ, gần như hoàn toàn mờ đục phần nền.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể làm mờ nền ảnh iPhone không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Chắc chắn! Công cụ làm mờ nền của SnapEdit hoạt động trên mọi thiết bị có kết nối internet, bao gồm cả iPhone. Ngoài ra, bạn cũng có thể tải xuống ứng dụng SnapEdit từ App Store để có trải nghiệm tốt hơn trên thiết bị di động.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Công cụ của bạn tốt trợ định dạng nào?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Công cụ làm mờ nền của chúng tôi hỗ trợ hầu hết các định dạng ảnh phổ biến, bao gồm JPEG/JPG, PNG, WEBP và TIFF. Bạn có thể tải xuống hình ảnh đã xử lý ở cùng định dạng với ảnh gốc hoặc chọn một định dạng khác nếu muốn.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Chức năng làm mờ hoạt động như thế nào?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Công cụ của chúng tôi sử dụng công nghệ AI để tự động nhận diện chủ thể chính trong hình ảnh và làm mờ phần nền. Thuật toán phân đoạn hình ảnh tiên tiến đảm bảo các cạnh của chủ thể được giữ nguyên sắc nét trong khi áp dụng hiệu ứng làm mờ cho phần còn lại của hình ảnh.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Có giới hạn kích thước tệp các chế độm làm mờ không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có một giới hạn kích thước tệp là 15MB cho người dùng miễn phí. Người dùng cao cấp có thể xử lý hình ảnh lên đến 50MB. Nếu hình ảnh của bạn lớn hơn, bạn có thể sử dụng công cụ nén ảnh của chúng tôi trước khi làm mờ nền.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Nền làm mờ có ảnh hưởng đến chất lượng ảnh không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Không, công cụ làm mờ nền của chúng tôi duy trì chất lượng của hình ảnh gốc. Chúng tôi chỉ áp dụng hiệu ứng làm mờ cho nền mà không làm giảm độ phân giải hoặc chất lượng tổng thể của hình ảnh. Trên thực tế, đối tượng chính trong ảnh thường xuất hiện sắc nét hơn sau khi nền được làm mờ.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Tôi có thể tùy gốc sau khi làm mờ không?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Có, bạn có thể tinh chỉnh độ mờ sau khi thuật toán AI đã tự động xác định và làm mờ nền. Chúng tôi cung cấp nhiều điều khiển để điều chỉnh cường độ làm mờ, chọn kiểu làm mờ, và thậm chí tinh chỉnh vùng làm mờ nếu cần.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/utils.js" type="module"></script>
+  <script src="../../assets/js/main.js" type="module"></script>
+  <script src="./script.js" type="module"></script>
+  <script>
+    // Load header and footer
+    fetch('../../layouts/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+
+    fetch('../../layouts/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
