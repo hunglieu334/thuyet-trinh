@@ -1,426 +1,331 @@
-import { handleFileUpload, handleDragDrop, initFaqAccordion, formatFileSize } from '../../assets/js/utils.js';
+// Import utility functions
+//import { setupMobileMenu, setupLanguageSwitcher } from '../../assets/js/utils.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize FAQ accordion
-  initFaqAccordion();
+// Navigation Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  // Elements
-  const fileInput = document.getElementById('fileInput');
-  const uploadArea = document.getElementById('uploadArea');
-  const editorSection = document.getElementById('editorSection');
-  const originalImage = document.getElementById('originalImage');
-  const compressedImage = document.getElementById('compressedImage');
-  const originalSize = document.getElementById('originalSize');
-  const compressedSize = document.getElementById('compressedSize');
-  const compressionRatio = document.getElementById('compressionRatio');
-  const qualitySlider = document.getElementById('quality');
-  const maxWidthInput = document.getElementById('maxWidth');
-  const formatSelect = document.getElementById('format');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const imageCounter = document.getElementById('imageCounter');
-  const resetBtn = document.getElementById('resetBtn');
-  const downloadBtn = document.getElementById('downloadBtn');
-
-  // State
-  let uploadedFiles = [];
-  let currentFileIndex = 0;
-  let currentFile = null;
-
-  // Event Listeners
-  uploadArea.addEventListener('dragover', handleDragOver);
-  uploadArea.addEventListener('dragleave', handleDragLeave);
-  uploadArea.addEventListener('drop', handleDrop);
-  fileInput.addEventListener('change', handleFileSelect);
-  qualitySlider.addEventListener('input', updateCompression);
-  maxWidthInput.addEventListener('input', updateCompression);
-  formatSelect.addEventListener('change', updateCompression);
-  prevBtn.addEventListener('click', showPreviousImage);
-  nextBtn.addEventListener('click', showNextImage);
-  resetBtn.addEventListener('click', resetSettings);
-  downloadBtn.addEventListener('click', downloadImages);
-
-  // Functions
-  function handleDragOver(e) {
-    e.preventDefault();
-    uploadArea.classList.add('dragover');
-  }
-
-  function handleDragLeave(e) {
-    e.preventDefault();
-    uploadArea.classList.remove('dragover');
-  }
-
-  function handleDrop(e) {
-    e.preventDefault();
-    uploadArea.classList.remove('dragover');
-    const files = Array.from(e.dataTransfer.files).filter(file => file.type.startsWith('image/'));
-    if (files.length > 0) {
-      handleFiles(files);
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
     }
-  }
 
-  function handleFileSelect(e) {
-    const files = Array.from(e.target.files).filter(file => file.type.startsWith('image/'));
-    if (files.length > 0) {
-      handleFiles(files);
-    }
-  }
+    // Image Comparison Slider
+    const sliders = document.querySelectorAll('.compare-slider');
+    
+    sliders.forEach(slider => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-  function handleFiles(files) {
-    uploadedFiles = files;
-    currentFileIndex = 0;
-    showCurrentImage();
-    editorSection.style.display = 'block';
-  }
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
 
-  function showCurrentImage() {
-    if (uploadedFiles.length === 0) return;
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
 
-    currentFile = uploadedFiles[currentFileIndex];
-    const reader = new FileReader();
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
 
-    reader.onload = (e) => {
-      originalImage.src = e.target.result;
-      originalSize.textContent = formatFileSize(currentFile.size);
-      updateCompression();
-    };
-
-    reader.readAsDataURL(currentFile);
-    updateImageCounter();
-  }
-
-  function showPreviousImage() {
-    if (currentFileIndex > 0) {
-      currentFileIndex--;
-      showCurrentImage();
-    }
-  }
-
-  function showNextImage() {
-    if (currentFileIndex < uploadedFiles.length - 1) {
-      currentFileIndex++;
-      showCurrentImage();
-    }
-  }
-
-  function updateImageCounter() {
-    imageCounter.textContent = `${currentFileIndex + 1}/${uploadedFiles.length}`;
-    prevBtn.disabled = currentFileIndex === 0;
-    nextBtn.disabled = currentFileIndex === uploadedFiles.length - 1;
-  }
-
-  function updateCompression() {
-    if (!currentFile) return;
-
-    const quality = qualitySlider.value / 100;
-    const maxWidth = parseInt(maxWidthInput.value);
-    const format = formatSelect.value;
-
-    const img = new Image();
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-
-      // Calculate new dimensions
-      let width = img.width;
-      let height = img.height;
-      if (width > maxWidth) {
-        height = (maxWidth * height) / width;
-        width = maxWidth;
-      }
-
-      canvas.width = width;
-      canvas.height = height;
-
-      // Draw and compress
-      ctx.drawImage(img, 0, 0, width, height);
-
-      // Convert to blob
-      canvas.toBlob((blob) => {
-        compressedImage.src = URL.createObjectURL(blob);
-        compressedSize.textContent = formatFileSize(blob.size);
-        
-        const ratio = ((currentFile.size - blob.size) / currentFile.size * 100).toFixed(1);
-        compressionRatio.textContent = `${ratio}%`;
-      }, `image/${format}`, quality);
-    };
-
-    img.src = originalImage.src;
-  }
-
-  function resetSettings() {
-    qualitySlider.value = 80;
-    maxWidthInput.value = 1920;
-    formatSelect.value = 'jpeg';
-    updateCompression();
-  }
-
-  function downloadImages() {
-    if (!currentFile) return;
-
-    const link = document.createElement('a');
-    link.download = `compressed_${currentFile.name}`;
-    link.href = compressedImage.src;
-    link.click();
-  }
-
-  // Add scroll animations
-  const elements = document.querySelectorAll('.step-card, .benefit-card, .feature-card');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
     });
-  }, {
-    threshold: 0.1
-  });
 
-  elements.forEach(element => {
-    observer.observe(element);
-    element.classList.add('scroll-element');
-  });
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements that should animate
+    document.querySelectorAll('.tool-card, .stat-card, .use-case').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Language Switcher
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        languageSwitcher.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            // Implement language switching logic here
+            console.log('Language switched to:', selectedLang);
+        });
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current FAQ item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+    // Loading Animation
+    window.addEventListener('load', () => {
+        const loading = document.querySelector('.loading');
+        if (loading) {
+            loading.classList.add('hidden');
+            setTimeout(() => {
+                loading.remove();
+            }, 300);
+        }
+    });
+
+    // Mobile Menu Toggle
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // Parallax Effect for Hero Section
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            heroSection.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
+    }
+
+    // Tool Card Hover Effect
+    document.querySelectorAll('.tool-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Testimonial Slider (if needed)
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const testimonialInterval = 5000; // 5 seconds
+
+    function showNextTestimonial() {
+        testimonials[currentTestimonial].classList.remove('active');
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        testimonials[currentTestimonial].classList.add('active');
+    }
+
+    if (testimonials.length > 1) {
+        setInterval(showNextTestimonial, testimonialInterval);
+    }
+
+    // Add active class to first testimonial
+    if (testimonials.length > 0) {
+        testimonials[0].classList.add('active');
+    }
+
+    // CTA Button Animation
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transform = 'scale(1.05)';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+
+    // Scroll to Top Button
+    const scrollTopButton = document.createElement('button');
+    scrollTopButton.innerHTML = '↑';
+    scrollTopButton.className = 'scroll-top';
+    document.body.appendChild(scrollTopButton);
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopButton.classList.add('show');
+        } else {
+            scrollTopButton.classList.remove('show');
+        }
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
 
-// Mock function for compression UI (in a real app, this would initialize the compression tool)
-function showCompressorUI(files) {
-  // Create a preview modal (for demonstration purposes)
-  const modal = document.createElement('div');
-  modal.className = 'compressor-modal';
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Setup mobile menu
+    //setupMobileMenu();
 
-  let filesHTML = '';
-  files.forEach((file, index) => {
-    const fileSize = formatFileSize(file.size);
-    const reader = new FileReader();
+    // Setup language switcher
+    //setupLanguageSwitcher();
 
-    reader.onload = (e) => {
-      const filePreview = document.getElementById(`file-preview-${index}`);
-      if (filePreview) {
-        filePreview.src = e.target.result;
-      }
+    // Add scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
     };
 
-    reader.readAsDataURL(file);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-    filesHTML += `
-      <div class="file-item">
-        <div class="file-preview">
-          <img id="file-preview-${index}" src="" alt="${file.name}">
-        </div>
-        <div class="file-info">
-          <div class="file-name">${file.name}</div>
-          <div class="file-size">Original: ${fileSize}</div>
-          <div class="compression-slider">
-            <label>Compression level:</label>
-            <input type="range" min="0" max="100" value="75" class="slider">
-            <span>75%</span>
-          </div>
-        </div>
-      </div>
-    `;
-  });
+    // Observe elements for animation
+    document.querySelectorAll('.tool-card, .feature-card').forEach(element => {
+        observer.observe(element);
+    });
 
-  modal.innerHTML = `
-    <div class="compressor-content">
-      <div class="compressor-header">
-        <h3>Compress Images</h3>
-        <button class="close-btn">&times;</button>
-      </div>
-      <div class="files-list">
-        ${filesHTML}
-      </div>
-      <div class="compression-options">
-        <div class="option">
-          <label>
-            <input type="checkbox" checked> Preserve image quality
-          </label>
-        </div>
-        <div class="option">
-          <label>
-            <input type="checkbox"> Convert to JPG (smaller size)
-          </label>
-        </div>
-        <div class="option">
-          <label>
-            <input type="checkbox"> Resize images
-          </label>
-        </div>
-      </div>
-      <div class="compression-actions">
-        <button class="btn btn-outline">Cancel</button>
-        <button class="btn btn-primary compress-btn">Compress Now</button>
-      </div>
-    </div>
-  `;
+    // Add hover effects to tool cards
+    const toolCards = document.querySelectorAll('.tool-card');
+    toolCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+        });
 
-  document.body.appendChild(modal);
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
 
-  // Add simple styling
-  const style = document.createElement('style');
-  style.textContent = `
-    .compressor-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    .compressor-content {
-      background-color: white;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 800px;
-      max-height: 90vh;
-      overflow: auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-    .compressor-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .files-list {
-      padding: 1rem;
-      max-height: 50vh;
-      overflow-y: auto;
-    }
-    .file-item {
-      display: flex;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-    .file-preview {
-      width: 100px;
-      height: 100px;
-      margin-right: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .file-preview img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    .file-info {
-      flex: 1;
-    }
-    .file-name {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .file-size {
-      color: #666;
-      font-size: 0.875rem;
-      margin-bottom: 0.75rem;
-    }
-    .compression-slider {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .slider {
-      flex: 1;
-    }
-    .compression-options {
-      padding: 1rem;
-      background-color: #f5f5f5;
-    }
-    .option {
-      margin-bottom: 0.5rem;
-    }
-    .compression-actions {
-      padding: 1rem;
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.5rem;
-      border-top: 1px solid #eee;
-    }
-  `;
+    // Add smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
 
-  document.head.appendChild(style);
+// Header Dropdowns & Mobile Menu
 
-  // Handle close button
-  const closeBtn = modal.querySelector('.close-btn');
-  closeBtn.addEventListener('click', () => {
-    document.body.removeChild(modal);
-  });
-
-  // Handle cancel button
-  const cancelBtn = modal.querySelector('.btn-outline');
-  cancelBtn.addEventListener('click', () => {
-    document.body.removeChild(modal);
-  });
-
-  // Handle compression sliders
-  const sliders = modal.querySelectorAll('.slider');
-  sliders.forEach(slider => {
-    const valueDisplay = slider.nextElementSibling;
-    slider.addEventListener('input', () => {
-      valueDisplay.textContent = `${slider.value}%`;
+document.addEventListener('DOMContentLoaded', function() {
+  // Dropdown for nav
+  document.querySelectorAll('.dropdown > a').forEach(function(drop) {
+    drop.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = drop.parentElement;
+      parent.classList.toggle('open');
+      // Close others
+      document.querySelectorAll('.dropdown').forEach(function(item) {
+        if (item !== parent) item.classList.remove('open');
+      });
     });
   });
-
-  // Handle compress button
-  const compressBtn = modal.querySelector('.compress-btn');
-  compressBtn.addEventListener('click', () => {
-    compressBtn.textContent = 'Compressing...';
-    compressBtn.disabled = true;
-
-    // Simulate compression process
-    setTimeout(() => {
-      const fileItems = modal.querySelectorAll('.file-item');
-
-      fileItems.forEach((item, index) => {
-        const sizeElement = item.querySelector('.file-size');
-        const originalSize = sizeElement.textContent.replace('Original: ', '');
-
-        // Calculate a simulated compressed size (in a real app this would be the actual compressed size)
-        const compressionRate = parseInt(item.querySelector('.slider').value) / 100;
-        const reducedSize = Math.round((1 - compressionRate) * parseFloat(originalSize));
-
-        // Add compressed size information
-        sizeElement.innerHTML = `Original: ${originalSize} → Compressed: ${reducedSize} ${originalSize.split(' ')[1]} <span style="color: green;">(${Math.round(compressionRate * 100)}% smaller)</span>`;
-      });
-
-      // Add download buttons
-      const actionsDiv = modal.querySelector('.compression-actions');
-      actionsDiv.innerHTML = `
-        <button class="btn btn-outline close-btn">Close</button>
-        <button class="btn btn-primary download-btn">Download All</button>
-      `;
-
-      // Handle new close button
-      actionsDiv.querySelector('.close-btn').addEventListener('click', () => {
-        document.body.removeChild(modal);
-      });
-
-      // Handle download button
-      actionsDiv.querySelector('.download-btn').addEventListener('click', () => {
-        alert('In a real app, this would download the compressed images. Compression completed successfully!');
-        document.body.removeChild(modal);
-      });
-    }, 2000); // Simulate 2-second compression process
+  // Close dropdown when click outside
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('.dropdown').forEach(function(item) {
+      if (!item.contains(e.target)) item.classList.remove('open');
+    });
+    // Language menu
+    const langSwitcher = document.querySelector('.language-switcher');
+    if (langSwitcher && !langSwitcher.contains(e.target)) {
+      langSwitcher.classList.remove('open');
+    }
   });
-}
+  // Language menu
+  const langBtn = document.querySelector('.language-btn');
+  if (langBtn) {
+    langBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = langBtn.closest('.language-switcher');
+      parent.classList.toggle('open');
+    });
+  }
+  // Mobile menu
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navMenu = document.querySelector('.nav-menu');
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+  }
+
+  //Add expand collapse event
+  const coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    this.children[0].innerText = "+"
+                } else {
+                    content.style.display = "block";
+                    this.children[0].innerText = "-"
+                }
+            });
+        }
+}); 
