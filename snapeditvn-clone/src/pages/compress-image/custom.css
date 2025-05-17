@@ -42,11 +42,12 @@ input.file {
     border: solid white;
     border-radius: 20px;
     border-width: 1px;
-    padding: 40px;
     text-align: center;
-    display: inline-block;
     vertical-align: top;
     margin-top: 100px;
+    float: right;
+    margin-right: 30px;
+    padding: 40px;
 
 }
 
@@ -73,6 +74,7 @@ h6 {
     background-color: blue;
     color: white;
     box-shadow: 0px 0px 10px 10px rgb(225, 230, 240);
+    margin: 20px;
 }
 
 .hinhref {
@@ -83,6 +85,7 @@ h6 {
 
 .muc2 {
     text-align: center;
+    margin-top: 20px;
 }
 
 .sapxep {
@@ -102,13 +105,14 @@ h6 {
 .al {
     text-align: left;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .number {
     border: solid rgb(225, 237, 247);
     background-color: rgb(225, 237, 247);
     border-radius: 50px;
-    padding: 4px 8px;
+    padding: 4px 9px;
     margin-right: 5px;
 }
 
@@ -132,8 +136,18 @@ label {
     padding: 30px;
     display: inline-block;
     vertical-align: top;
-    width: 550px;
+    width: 615px;
+}
 
+.nen2_muc2{
+    float: right;
+    vertical-align: top;
+    width: 550px;
+    margin-top: 25px;
+}
+
+.nen2_p1{
+    margin-right: 33px;
 }
 
 .hinhref8 {
@@ -150,12 +164,13 @@ label {
     border-radius: 20px;
     background-color: rgba(179, 175, 175, 0.575);
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+    padding-top: 30px;
 }
 
 .muc3 {
     display: inline-block;
-    width: 560px;
+    width: 45%;
     margin: 20px;
 }
 
@@ -168,18 +183,18 @@ label {
 
 .muc3_2 {
     display: inline-block;
-    width: 250px;
+    width: 400px;
     vertical-align: top;
 }
 
 .label3 {
     border: solid white;
     border-radius: 20px;
-    width: 100px;
+    width: 135px;
     background-color: white;
     position: absolute;
-    left: 500px;
-    top: 450px;
+    left: 50%;
+    bottom: 30px;
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -207,11 +222,6 @@ hr {
     font-weight: bold;
 }
 
-/* .active,
-.collapsible:hover {
-    background-color: #dddde3;
-} */
-
 .content {
     padding: 0 18px;
     display: none;
@@ -236,8 +246,7 @@ hr {
 
     .khung2 {
         width: 480px;
-        text-align: center;
-
+        margin: 45px;
     }
 
     .nenanhHinh1 {
@@ -260,14 +269,6 @@ hr {
         margin: 19px;
     }
 
-    .nen2_muc1 {
-        margin-right: 10px;
-        padding: 30px;
-        display: inline-block;
-        vertical-align: top;
-        width: 450px;
-    }
-
     .hinhref8 {
         width: 400px;           
         left: 56px;
@@ -275,23 +276,27 @@ hr {
 
     .hinhref9 {
         width: 400px;
-        margin-left: 56px;
+        margin-left: 94px;
     }
 
     .muc3lon {
         width: 576px;
         margin: 18px;
+        height: 1170px;
     }
 
     .label3 {
+        width: 100px;
         position: absolute;
+        bottom: 585px;
         left: 450px;
+        padding: 2px;
     }
 
 
     .muc_cuoi {
-        width: 540px;
-        margin: 16px;
+        width: 550px;
+        margin: 33px;
     }
 
 }
