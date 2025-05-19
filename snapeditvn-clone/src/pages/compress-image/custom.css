@@ -1,3 +1,9 @@
+ul.language-menu li {
+    list-style: none;
+}
+
+
+
 div.fileinputs {
     position: relative;
 }

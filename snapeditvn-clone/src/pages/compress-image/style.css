@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+
+a.flag img {
+  width: 19px;
+  height: 13px;
+}
+.choose_flag{
+  width: 25px;
+  height: 18px;
+}
 /* Reset and Base Styles */
 :root {
   --primary-color: #2563eb;
@@ -63,7 +72,7 @@ body {
   height: 36px;
 }
 
-.nav-menu ul {
+.nav-menu ul:first-child {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -72,6 +81,7 @@ body {
 
 .nav-menu ul li {
   position: relative;
+  list-style: none;
 }
 
 .nav-menu ul li a {
@@ -153,10 +163,6 @@ body {
   background: #f3f4f6;
 }
 
-.language-btn img {
-  width: 20px;
-  height: 20px;
-}
 
 .language-menu {
   display: none;
