@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thêm Watermark vào ảnh - SnapEdit.App</title>
-  <meta name="description" content="Thêm watermark vào ảnh online miễn phí. Tải lên ảnh và thêm logo, chữ hoặc hình ảnh làm watermark. Tải xuống ảnh đã thêm watermark ngay lập tức.">
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/svg+xml" href="../../../public/images/favicon.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chèn Watermark - SnapEdit Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="/" class="logo">
-          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
-          <span>SnapEdit</span>
+        <a href="/home" class="logo">
+          <img src="../../../public/images/snapedit-logo.svg" alt="SnapEdit Logo" height="40"/>
         </a>
         <nav class="nav-menu">
           <ul>
@@ -35,183 +33,190 @@
         <div class="header-actions">
           <div class="language-switcher">
             <button class="language-btn">
-              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
+              <img src="../../../public/images/favicon.svg" alt="Tiếng Việt" width="20" height="20"/>
               <span>Tiếng Việt</span>
               <span class="arrow">▼</span>
             </button>
             <ul class="language-menu">
-              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
-              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI" width="18" height="18"/> Tiếng Việt</a></li>
+              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN" width="18" height="18"/> English</a></li>
             </ul>
           </div>
           <a href="#" class="login-link">Đăng nhập</a>
           <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
-          <button class="mobile-menu-btn">
-            <span></span><span></span><span></span>
-          </button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Nội dung chính bọc trong main-content -->
   <main class="main-content">
-    <div class="container">
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="hero-content">
-          <h1>Thêm Watermark vào ảnh</h1>
-          <p>Thêm logo, chữ hoặc hình ảnh làm watermark vào ảnh của bạn. Bảo vệ bản quyền hình ảnh với công cụ thêm watermark trực tuyến miễn phí.</p>
+    <!-- INTRO -->
+    <section class="intro-section container">
+      <div class="intro-left">
+        <h1>Chèn Watermark<br>Chèn Logo Cho Ảnh</h1>
+        <p>Một công cụ đơn giản, nhanh chóng và hiệu quả để thêm watermark bảo vệ bản quyền vào của bất kỳ hình ảnh nào.</p>
+        <div class="image-group" id="imageGroup">
+          <img src="../../../public/images/add-watermark/anh-meo-khong-watermark.jpg" alt="Ảnh gốc" />
+          <img src="../../../public/images/add-watermark/anh-meo-watermark.png" alt="Ảnh có watermark" class="right" />
+          <div class="emoji">😍</div>
         </div>
-      </section>
+      </div>
+      
+      <div class="upload-box">
+        <button id="uploadBtn">Tải lên hình ảnh</button>
+        <input type="file" id="fileInput" accept="image/*" style="display:none" />
+        <p>Hoặc chỉ cần thả vào đây Ctrl + V để dán hình ảnh</p>
+        <hr />
+        <p>Không có hình ảnh? Thử một trong những cái này</p>
+        <div class="upload-images" id="presetImages">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Ảnh mẫu 1" />
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616491.png" alt="Ảnh mẫu 2" />
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Ảnh mẫu 3" />
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616491.png" alt="Ảnh mẫu 4" />
+        </div>
+      </div>
+    </section>
 
-      <!-- Upload Section -->
-      <section class="upload-section">
-        <div class="upload-container">
-          <div class="upload-area" id="uploadArea">
-            <img src="../../../public/images/icons/upload.svg" alt="Upload icon" class="upload-icon">
-            <h3>Kéo & thả ảnh vào đây</h3>
-            <p>hoặc</p>
-            <label for="fileInput" class="btn btn-primary">Chọn ảnh</label>
-            <input type="file" id="fileInput" accept="image/*" hidden>
-            <p class="upload-hint">Hỗ trợ: JPG, PNG, WEBP (Tối đa 10MB)</p>
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <h2>Cách chèn watermark trên điện thoại hoặc PC</h2>
+      <p>Muốn bảo vệ ảnh của bạn bằng watermark văn bản hoặc logo? Dưới đây là các bước để sử dụng phần mềm chèn watermark online của chúng tôi:</p>
+      <div class="how-cards">
+        <div class="card">
+          <img src="../../../public/images/add-watermark/step_1.png" alt="Upload" />
+          <h3>1. Tải ảnh lên</h3>
+          <p>Tải lên ảnh từ thiết bị của bạn hoặc kéo và thả chúng vào trình chỉnh sửa.</p>
+        </div>
+        <div class="card">
+          <img src="../../../public/images/add-watermark/step_2.png" alt="Watermark" />
+          <h3>2. Thêm watermark</h3>
+          <p>Gắn watermark văn bản/logo vào ảnh của bạn. Thủ công đặt chúng trên hình ảnh của bạn, điều chỉnh phông chữ, kích thước, độ mờ theo sở thích của bạn.</p>
+        </div>
+        <div class="card">
+          <img src="../../../public/images/add-watermark/step_3.png" alt="Download" />
+          <h3>3. Tải xuống hình ảnh có watermark</h3>
+          <p>Khi đã hài lòng với kết quả, bạn có thể tải xuống hình ảnh gắn watermark về thiết bị.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD APP -->
+    <section class="download-app">
+      <div class="download-left">
+        <h2>Tải xuống ứng dụng di động SnapEdit</h2>
+        <p>Ứng dụng SnapEdit hiện có sẵn trên Apple Store & Google Play Store. Ứng dụng của chúng tôi đã được người dùng trên toàn thế giới sử dụng để chỉnh sửa hình ảnh.</p>
+      </div>
+      <div class="download-buttons">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURES DARK -->
+    <section class="features-dark">
+      <div class="container">
+        <div class="feature-item">
+          <div class="feature-icon">🔄</div>
+          <div class="feature-text">
+            <h4>Tùy chỉnh watermark linh hoạt</h4>
+            <p>Công cụ chèn watermark của chúng tôi cho phép bạn thêm nhiều loại watermark vào ảnh bao gồm chèn chữ chìm (với đa dạng phông chữ, kích thước và màu sắc); chèn logo chìm, hoặc sự kết hợp của cả hai. Thoải mái điều chỉnh chính xác vị trí và độ mờ của watermark.</p>
           </div>
         </div>
-      </section>
-
-      <!-- Editor Section -->
-      <section class="editor-section" id="editorSection" style="display: none;">
-        <div class="editor-container">
-          <div class="editor-preview">
-            <div class="preview-container">
-              <img id="previewImage" src="" alt="Preview">
-              <div id="watermarkContainer" class="watermark-container">
-                <!-- Watermark will be added here -->
-              </div>
-            </div>
+        <div class="feature-item">
+          <div class="feature-icon">📁</div>
+          <div class="feature-text">
+            <h4>Xử lý hàng loạt hình ảnh</h4>
+            <p>Công cụ web của chúng tôi tiết kiệm thời gian bằng cách cho phép chèn watermark vào ảnh hàng loạt. Bạn có thể thêm watermark cho 50 hình ảnh cùng một lúc. Thử ngay bây giờ.</p>
           </div>
-          <div class="editor-controls">
-            <div class="control-group">
-              <h3>Loại Watermark</h3>
-              <div class="watermark-type-buttons">
-                <button class="btn btn-outline active" data-type="text">Chữ</button>
-                <button class="btn btn-outline" data-type="image">Hình ảnh</button>
-              </div>
-            </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-text">
+            <h4>An toàn khi sử dụng</h4>
+            <p>Bảo mật và quyền riêng tư là điều chúng tôi thực sự quan tâm. Hình ảnh tải lên được mã hóa cẩn thận. Đảm bảo không lưu trữ sau khi ảnh của bạn được xử lý.</p>
+          </div>
+        </div>
+        <button id="tryBtn" class="btn">Thử ngay 😘</button>
+      </div>
+    </section>
 
-            <!-- Text Watermark Controls -->
-            <div class="control-group" id="textControls">
-              <div class="form-group">
-                <label for="watermarkText">Nội dung</label>
-                <input type="text" id="watermarkText" placeholder="Nhập nội dung watermark">
-              </div>
-              <div class="form-group">
-                <label for="textColor">Màu chữ</label>
-                <input type="color" id="textColor" value="#ffffff">
-              </div>
-              <div class="form-group">
-                <label for="textSize">Kích thước</label>
-                <input type="range" id="textSize" min="12" max="72" value="24">
-              </div>
-              <div class="form-group">
-                <label for="textOpacity">Độ trong suốt</label>
-                <input type="range" id="textOpacity" min="0" max="100" value="50">
-              </div>
-            </div>
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2> ❓Các Câu Hỏi Về Công Cụ Chèn Watermark</h2>
+      <div class="faq-item">
+        Việc chèn watermark có miễn phí không?
+        <div class="faq-answer">Có, công cụ này hoàn toàn miễn phí sử dụng.</div>
+      </div>
+      <div class="faq-item">
+        Làm thế nào để thêm watermark ngay trên iPhone hoặc thiết bị di động?
+        <div class="faq-answer">Bạn có thể truy cập trang web bằng trình duyệt di động và sử dụng công cụ trực tiếp.</div>
+      </div>
+      <div class="faq-item">
+        Tôi có thể chuyển đổi một hình ảnh thành watermark không?
+        <div class="faq-answer">Hiện tại công cụ chưa hỗ trợ chức năng này.</div>
+      </div>
+      <div class="faq-item">
+        Có giới hạn kích thước tệp hình ảnh tải lên không?
+        <div class="faq-answer">Giới hạn tối đa 50MB cho mỗi hình ảnh.</div>
+      </div>
+      <div class="faq-item">
+        Tôi có thể tạo và lưu cài đặt watermark để sử dụng cho lần sau không?
+        <div class="faq-answer">Hiện công cụ chưa hỗ trợ lưu cài đặt cá nhân.</div>
+      </div>
+      <div class="faq-item">
+        Nhược điểm của việc sử dụng watermark là gì?
+        <div class="faq-answer">Watermark có thể làm ảnh hưởng phần nào đến thẩm mỹ của hình ảnh.</div>
+      </div>
+    </section>
 
-            <!-- Image Watermark Controls -->
-            <div class="control-group" id="imageControls" style="display: none;">
-              <div class="form-group">
-                <label for="watermarkImage">Chọn hình ảnh</label>
-                <input type="file" id="watermarkImage" accept="image/*">
-              </div>
-              <div class="form-group">
-                <label for="imageSize">Kích thước</label>
-                <input type="range" id="imageSize" min="10" max="100" value="30">
-              </div>
-              <div class="form-group">
-                <label for="imageOpacity">Độ trong suốt</label>
-                <input type="range" id="imageOpacity" min="0" max="100" value="50">
-              </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="footer-logo">SnapEdit</span>
+            <p>SnapEdit.App - Công cụ chỉnh sửa ảnh trực tuyến miễn phí</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Sản phẩm</h4>
+              <ul>
+                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                <li><a href="/compress-image">Nén ảnh</a></li>
+                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+              </ul>
             </div>
-
-            <div class="control-group">
-              <h3>Vị trí</h3>
-              <div class="position-grid">
-                <button class="position-btn" data-position="top-left">↖</button>
-                <button class="position-btn" data-position="top-center">↑</button>
-                <button class="position-btn" data-position="top-right">↗</button>
-                <button class="position-btn" data-position="middle-left">←</button>
-                <button class="position-btn" data-position="middle-center">•</button>
-                <button class="position-btn" data-position="middle-right">→</button>
-                <button class="position-btn" data-position="bottom-left">↙</button>
-                <button class="position-btn" data-position="bottom-center">↓</button>
-                <button class="position-btn" data-position="bottom-right">↘</button>
-              </div>
+            <div class="footer-column">
+              <h4>Công ty</h4>
+              <ul>
+                <li><a href="/about">Giới thiệu</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/careers">Tuyển dụng</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+              </ul>
             </div>
-
-            <div class="action-buttons">
-              <button class="btn btn-secondary" id="resetBtn">Đặt lại</button>
-              <button class="btn btn-primary" id="downloadBtn">Tải xuống</button>
+            <div class="footer-column">
+              <h4>Hỗ trợ</h4>
+              <ul>
+                <li><a href="/help">Trung tâm trợ giúp</a></li>
+                <li><a href="/faq">Câu hỏi thường gặp</a></li>
+                <li><a href="/privacy">Chính sách bảo mật</a></li>
+                <li><a href="/terms">Điều khoản sử dụng</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 SnapEdit.App. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="../../../public/images/logo.svg" alt="SnapEdit Logo">
-          <p>Chỉnh sửa ảnh online với AI</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Sản phẩm</h4>
-            <ul>
-              <li><a href="/vi/tools">Tất cả công cụ</a></li>
-              <li><a href="/vi/pricing">Giá</a></li>
-              <li><a href="/vi/api">API</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Công ty</h4>
-            <ul>
-              <li><a href="/vi/about">Về chúng tôi</a></li>
-              <li><a href="/vi/blog">Blog</a></li>
-              <li><a href="/vi/careers">Tuyển dụng</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Hỗ trợ</h4>
-            <ul>
-              <li><a href="/vi/help">Trung tâm trợ giúp</a></li>
-              <li><a href="/vi/contact">Liên hệ</a></li>
-              <li><a href="/vi/status">Trạng thái</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 SnapEdit. All rights reserved.</p>
-        <div class="footer-social">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="../../../public/images/social/facebook.svg" alt="Facebook">
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="../../../public/images/social/twitter.svg" alt="Twitter">
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="../../../public/images/social/instagram.svg" alt="Instagram">
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="./script.js"></script>
 </body>
 </html>
