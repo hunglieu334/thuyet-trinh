@@ -62,7 +62,9 @@ h6 {
     margin: 0px;
 }
 
-
+.buttonHeight{
+    height: 100px;
+}
 
 .nenanhbutton1 {
     font-size: 25px;
@@ -74,7 +76,7 @@ h6 {
     background-color: blue;
     color: white;
     box-shadow: 0px 0px 10px 10px rgb(225, 230, 240);
-    margin: 20px;
+    line-height: 85px;
 }
 
 .hinhref {
@@ -223,7 +225,7 @@ hr {
 }
 
 .content {
-    padding: 0 18px;
+    padding: 10px 18px;
     display: none;
     overflow: hidden;
     font-size: 20px;
@@ -270,8 +272,8 @@ hr {
     }
 
     .hinhref8 {
-        width: 400px;           
-        left: 56px;
+        width: 400px;        
+        margin-right: 56px;
     }
 
     .hinhref9 {

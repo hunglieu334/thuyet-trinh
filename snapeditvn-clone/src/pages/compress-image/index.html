@@ -1,354 +1,383 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SnapEdit - Chỉnh sửa ảnh AI trực tuyến</title>
-  <meta name="description" content="Chỉnh sửa ảnh online miễn phí với các công cụ AI chuyên nghiệp. Thêm watermark, làm mờ nền, nén ảnh và chuyển đổi định dạng ảnh dễ dàng.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="custom.css">
-  <script src="https://kit.fontawesome.com/751c6eba55.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapEdit - Chỉnh sửa ảnh AI trực tuyến</title>
+    <meta name="description"
+        content="Chỉnh sửa ảnh online miễn phí với các công cụ AI chuyên nghiệp. Thêm watermark, làm mờ nền, nén ảnh và chuyển đổi định dạng ảnh dễ dàng.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom.css">
+    <script src="https://kit.fontawesome.com/751c6eba55.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
 
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <a href="/home" class="logo">
-          <img src="../../../public/images/snapedit-logo.svg" alt="SnapEdit Logo" height="40"/>
-        </a>
-        <nav class="nav-menu">
-          <ul>
-            <li class="dropdown">
-              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/add-watermark">Thêm Watermark</a></li>
-                <li><a href="/blur-bg">Làm mờ nền</a></li>
-                <li><a href="/compress-image">Nén ảnh</a></li>
-                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Giá</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <div class="language-switcher">
-            <button class="language-btn">
-              <img src="../../../public/images/favicon.svg" alt="Tiếng Việt" width="20" height="20"/>
-              <span>Tiếng Việt</span>
-              <span class="arrow">▼</span>
-            </button>
-            <ul class="language-menu">
-              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI" width="18" height="18"/> Tiếng Việt</a></li>
-              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN" width="18" height="18"/> English</a></li>
-            </ul>
-          </div>
-          <a href="#" class="login-link">Đăng nhập</a>
-          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="nen1">
-      <div class="khung1">
-          <div class="khung1_1">
-              <div>
-                  <h6>Nén ảnh trực tuyến miễn phí</h6>
-              </div>
-
-              <p> SnapEdit cung cấp thêm tính năng mới giúp giảm dung lượng ảnh lên đến 95%. Công cụ nén ảnh này giúp
-                  tối
-                  ưu hóa trang web, quản lý lữu trữ và truyền dữ liệu. Hãy thử ngay bây giờ!</p>
-          </div>
-          <img src="../../../public/images/compress-image/hero_banner.webp" class="nenanhHinh1" alt="">
-      </div>
-
-      <div class="khung2">
-          <button class="nenanhbutton1"><i class="fa-solid fa-arrow-up-from-bracket"></i> Tải lên hình ảnh</button>
-          <p>Hoặc chỉ cần thả vào đây</p>
-          <p>Ctrl + V để dán hình ảnh</p>
-          <hr class="hr_1">
-          <p>Không có hình ảnh? Thử một trong những cái này</p>
-          <br>
-          <figure>
-              <img class="hinhref" src="../../../public/images/compress-image/hinhref1.jpg" alt="">
-              <img class="hinhref" src="../../../public/images/compress-image/hinhrefer2.jpg" alt="">
-              <img class="hinhref" src="../../../public/images/compress-image/hinhrefer3.jpg" alt="">
-              <img class="hinhref" src="../../../public/images/compress-image/hinhrefer4.jpg" alt="">
-          </figure>
-      </div>
-
-  </div>
-  <div>
-      <h1 class="muc2">Cách nén ảnh trên website, Điện thoại?</h1>
-      <div>
-          <div class="muc2">Quá trình nén ảnh bằng 3 bước đơn giản như sau:</div>
-          <div class="sapxep">
-              <img class="sapxep_img" src="../../../public/images/compress-image/hinhref5.webp" alt="">
-              <p class="al"><strong class="number">1</strong> <strong>Tải lên</strong> </p>
-              <p class="al">Tải ảnh lên công cụ nén ảnh SnapEdit. Ở trang tải lên người dùng có thể chọn thêm nhiều
-                  file ảnh
-                  cần nén dung lượng.</p>
-          </div>
-          <div class="sapxep">
-              <img class="sapxep_img" src="../../../public/images/compress-image/hinhrefer6.webp" alt="">
-              <p class="al"><strong class="number">2</strong> <strong>Nén ảnh</strong> </p>
-              <p class="al">Sau khi tất cả các ảnh được tải lên, nhấn vào nút Nén Ngay Bây Giờ để giảm dung lượng. Chờ
-                  cho
-                  đến khi quá trình hoàn tất.</p>
-          </div>
-          <div class="sapxep">
-              <img class="sapxep_img" src="../../../public/images/compress-image/hinhrefer7.webp" alt="">
-              <p class="al"><strong class="number">3</strong> <strong>Tải xuống</strong> </p>
-              <p class="al">Tải các ảnh đã được nén xuống và yên tâm sử dụng. Ảnh tải xuống không chứa watermark.</p>
-          </div>
-      </div>
-  </div>
-  <div class="nen2">
-      <div>
-          <h5 class="title3">Công Cụ Giảm Dung Lượng KB Ảnh Hữu Ích </h5>
-          <div>
-              <div>
-                  <div class="nen2_muc1">
-                      <h1>Tăng Tốc Độ Trang Web</h1>
-                      <p>Nén ảnh để tối ưu hóa trang web một cách nhanh chóng và dễ dàng. Công cụ nén ảnh SnapEdit là
-                          công cụ
-                          không thể thiếu cho các nhà phát triển web và quản trị viên web. Giảm kích thước ảnh lớn sẽ
-                          tăng tốc
-                          độ trang web.</p>
-                      <div class="fileinputs">
-                          <input id="tryInput" name="tryInput" type="file" class="file" style="display: none;" />
-                          <label for="tryInput">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
-                          <div class="fakefile">
-                              <input style="display: none;" />
-                              <img src="../images/image1.jpg" style="display: none;" />
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="nen2_muc1">
-                      <img class="hinhref8" src="../../../public/images/compress-image/hinhref8.webp" alt="">
-                  </div>
-
-              </div>
-
-          </div>
-          <br><br>
-          <div>  
-              <div class="nen2_muc2">
-                  <h1>Tăng Tốc Độ Truyền Dữ Liệu</h1>
-                  <p class="nen2_p1">Công cụ nén ảnh của SnapEdit cung cấp giải pháp cho việc kết nối chậm và băng thông hạn chế. Việc
-                      nén
-                      dung lượng ảnh, làm tăng tốc độ truyền dữ liệu, cải thiện giao tiếp và tiết kiệm thời gian.</p>
-                  <input type="file" name="uploadfile" id="img" style="display:none;" />
-                  <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
-              </div>
-              <div class="nen2_muc1">
-                <img class="hinhref9" src="../../../public/images/compress-image/hinhref9.webp" alt="">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/home" class="logo">
+                    <img src="../../../public/images/snapedit-logo.svg" alt="SnapEdit Logo" height="40" />
+                </a>
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/add-watermark">Thêm Watermark</a></li>
+                                <li><a href="/blur-bg">Làm mờ nền</a></li>
+                                <li><a href="/compress-image">Nén ảnh</a></li>
+                                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Giá</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="language-switcher">
+                        <button class="language-btn">
+                            <img src="../../../public/images/favicon.svg" alt="Tiếng Việt" width="20" height="20" />
+                            <span>Tiếng Việt</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <ul class="language-menu">
+                            <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI" width="18"
+                                        height="18" /> Tiếng Việt</a></li>
+                            <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN" width="18"
+                                        height="18" /> English</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="login-link">Đăng nhập</a>
+                    <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
+                </div>
             </div>
-          </div>
-          <br><br>
-          <div>
-              <div class="nen2_muc1">
-                  <h1>Tối Ưu Quản Lý Lưu Trữ</h1>
-                  <p>Công cụ nén ảnh của chúng tôi cũng giúp quản lý lưu trữ đám mây một cách hiệu quả hơn. Việc giảm
-                      dung
-                      lượng ảnh giúp bạn giải phóng đáng kể không gian và giảm chi phí lưu trữ. Điều này hữu ích cho
-                      việc
-                      lưu trữ, quản lý ảnh và làm việc với các thư viện ảnh lớn.</p>
-                  <input type="file" name="uploadfile" id="img" style="display:none;" />
-                  <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
-              </div>
-              <div class="nen2_muc1">
-                  <img class="hinhref8" src="../../../public/images/compress-image/hinhref10.webp" alt="">
-              </div>
-          </div>
-      </div>
-  </div>
-  <br>
-  <div class="muc3lon">
-      <div>
-          <div class="muc3">
-              <div class="muc3_1">
-                  <img src="../../../public/images/compress-image/Frame_1.png" alt="">
-              </div>
-              <div class="muc3_2">
-                  <h3>Nén ảnh chất lượng cao</h3>
-                  <p>SnapEdit sử dụng phương pháp nén tập tin lossy nhằm loại bỏ dữ liệu không quan trọng với mắt
-                      người
-                      dùng. Phương pháp này dẫn đến tỷ lệ nén cao hơn nhiều so với phương pháp nén lossless mà vẫn đảm
-                      bảo chất
-                      lượng ảnh.</p>
-              </div>
-          </div>
-          <div class="muc3">
-              <div class="muc3_1">
-                  <img src="../../../public/images/compress-image/Frame_2.png" alt="">
-              </div>
-              <div class="muc3_2">
-                  <h3>Chấp nhận nhiều định dạng ảnh</h3>
-                  <p>Công cụ nén ảnh của chúng tôi chấp nhận các tệp PNG, JPEG và JPG. Bạn có thể tải lên tối đa 50
-                      ảnh
-                      mỗi lần để xử lý hàng hoạt</p>
-              </div>
-          </div>
-          <div class="muc3">
-              <div class="muc3_1">
-                  <img src="../../../public/images/compress-image/Frame_3.png" alt="">
-              </div>
-              <div class="muc3_2">
-                  <h3>An toàn sử dụng</h3>
-                  <p>Việc nén ảnh được thực hiện bởi máy khách, không phải trên máy chủ, do đó kết quả trả ảnh về
-                      nhanh
-                      chóng và an toàn. Điều này đảm bảo an toàn cho người dùng và không lưu trữ hình ảnh trên
-                      SnapEdit.</p>
-              </div>
-          </div>
-          <div class="muc3">
-              <div class="muc3_1">
-                  <img src="../../../public/images/compress-image/Frame_4.png" alt="">
-              </div>
-              <div class="muc3_2">
-                  <h3>Dễ sử dụng và miễn phí</h3>
-                  <p>Công cụ nén ảnh online dễ sử dụng và hoàn toàn miễn phí. Giao diện dễ sử dụng, quy trình đơn giản
-                      và
-                      bạn có thể sử dụng công cụ này trên bất kỳ thiết bị nào có kết nối internet.</p>
-              </div>
-
-          </div>
-      </div>
-      <div class="label3">
-          <input type="file" name="uploadfile" id="img" style="display:none;" />
-          <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
-      </div>
-  </div>
-  <br>
-  <div class="muc_cuoi">
-      <h5 class="title3">Câu Hỏi Thường Gặp về Công cụ Nén Ảnh SnapEdit </h5>
-      <hr>
-      <button type="button" class="collapsible">
-          Cách hoạt động của thuật toán nén là gì?
-          <span class="daucong">+</span>
-      </button>
-
-      <div class="content">
-          <p>SnapEdit sử dụng các phương pháp nén tệp tin lossy để loại bỏ dữ liệu không quan trọng từ hình ảnh. Tỷ lệ
-              nén phụ thuộc vào mức chất lượng được xác định.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tỷ lệ nén tối đa có thể là bao nhiêu?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>SnapEdit có thể giảm kích thước ảnh lên đến 95%. Tuy nhiên, việc nén quá mức có thể ảnh hưởng đến
-              chất lượng ảnh.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tôi có thể điều chỉnh tỷ lệ nén/chất lượng không?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>Không, người dùng không thể điều chỉnh tỷ lệ nén hoặc chất lượng đầu ra.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">SnapEdit có hỗ trợ nén Lossless không?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>Hiện tại, SnapEdit không hỗ trợ nén lossless. SnapEdit tập trung vào việc nén lossy để đạt được tỷ lệ nén
-              cao. Chúng tôi sẽ cập nhật với tùy chọn nén lossless trong tương lai gần.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tôi có thể giảm kích thước tệp ảnh GIF hoặc các ảnh tĩnh
-          không?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>Không, bạn chỉ có thể nén các tệp PNG, JPEG và JPG. Tuy nhiên, SnapEdit có thể hỗ trợ các định dạng mới
-              trong tương lai như GIF, HEIC, TIFF, WebP.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tôi có thể nén bao nhiêu ảnh?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>SnapEdit có thể xử lý hàng loạt tác vụ. Bạn có thể tải lên tối đa 50 ảnh trong một phiên.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tôi có thể nén ảnh online trên thiết bị di động không?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>Có, SnapEdit có sẵn miễn phí trên iOS và Android.</p>
-      </div>
-      <hr>
-
-      <button type="button" class="collapsible">Tôi có thể giảm kích thước ảnh xuống 20KB không?
-          <span class="daucong">+</span>
-      </button>
-      <div class="content">
-          <p>Chúng tôi không thể đảm bảo kết quả chính xác. Kích thước cuối cùng phụ thuộc vào nhiều yếu tố như
-              nội dung của ảnh, cài đặt hiện tại của chúng tôi và các định dạng được sử dụng. Tuy nhiên, với công
-              cụ nén của chúng tôi, bạn có thể giảm kích thước ảnh xuống 20 KB vì quá trình nén của chúng tôi có
-              nhiều mất mát và tập trung vào việc duy trì chất lượng ảnh.</p>
-      </div>
-      <hr>
-  </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="footer-logo">SnapEdit</span>
-          <p>SnapEdit.App - Công cụ chỉnh sửa ảnh trực tuyến miễn phí</p>
         </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Sản phẩm</h4>
-            <ul>
-              <li><a href="/add-watermark">Thêm Watermark</a></li>
-              <li><a href="/blur-bg">Làm mờ nền</a></li>
-              <li><a href="/compress-image">Nén ảnh</a></li>
-              <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Công ty</h4>
-            <ul>
-              <li><a href="/about">Giới thiệu</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/careers">Tuyển dụng</a></li>
-              <li><a href="/contact">Liên hệ</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Hỗ trợ</h4>
-            <ul>
-              <li><a href="/help">Trung tâm trợ giúp</a></li>
-              <li><a href="/faq">Câu hỏi thường gặp</a></li>
-              <li><a href="/privacy">Chính sách bảo mật</a></li>
-              <li><a href="/terms">Điều khoản sử dụng</a></li>
-            </ul>
-          </div>
+    </header>
+
+    <main>
+        <div class="nen1">
+            <div class="khung1">
+                <div class="khung1_1">
+                    <div>
+                        <h6>Nén ảnh trực tuyến miễn phí</h6>
+                    </div>
+
+                    <p> SnapEdit cung cấp thêm tính năng mới giúp giảm dung lượng ảnh lên đến 95%. Công cụ nén ảnh này
+                        giúp
+                        tối
+                        ưu hóa trang web, quản lý lữu trữ và truyền dữ liệu. Hãy thử ngay bây giờ!</p>
+                </div>
+                <img src="../../../public/images/compress-image/hero_banner.webp" class="nenanhHinh1" alt="">
+            </div>
+
+            <div class="khung2">
+                <!-- <br><br> -->
+                <!-- <button class="nenanhbutton1"><i class="fa-solid fa-arrow-up-from-bracket"></i> Tải lên hình ảnh</button> -->
+                <div class="buttonHeight">
+                    <input type="file" name="uploadfile" id="img" style="display:none;" /> 
+                    <label class="nenanhbutton1" for="img"> <i class="fa-solid fa-arrow-up-from-bracket"></i> Tải lên hình ảnh</label>
+                </div>
+                
+                
+                <p>Hoặc chỉ cần thả vào đây</p>
+                <p>Ctrl + V để dán hình ảnh</p>
+                <hr class="hr_1">
+                <p>Không có hình ảnh? Thử một trong những cái này</p>
+                <br>
+                <figure>
+                    <img class="hinhref" src="../../../public/images/compress-image/hinhref1.jpg" alt="">
+                    <img class="hinhref" src="../../../public/images/compress-image/hinhrefer2.jpg" alt="">
+                    <img class="hinhref" src="../../../public/images/compress-image/hinhrefer3.jpg" alt="">
+                    <img class="hinhref" src="../../../public/images/compress-image/hinhrefer4.jpg" alt="">
+                </figure>
+            </div>
+
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 SnapEdit.App. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+        <div>
+            <h1 class="muc2">Cách nén ảnh trên website, Điện thoại?</h1>
+            <div>
+                <div class="muc2">Quá trình nén ảnh bằng 3 bước đơn giản như sau:</div>
+                <div class="sapxep">
+                    <img class="sapxep_img" src="../../../public/images/compress-image/hinhref5.webp" alt="">
+                    <p class="al"><strong class="number">1</strong> <strong>Tải lên</strong> </p>
+                    <p class="al">Tải ảnh lên công cụ nén ảnh SnapEdit. Ở trang tải lên người dùng có thể chọn thêm
+                        nhiều
+                        file ảnh
+                        cần nén dung lượng.</p>
+                </div>
+                <div class="sapxep">
+                    <img class="sapxep_img" src="../../../public/images/compress-image/hinhrefer6.webp" alt="">
+                    <p class="al"><strong class="number">2</strong> <strong>Nén ảnh</strong> </p>
+                    <p class="al">Sau khi tất cả các ảnh được tải lên, nhấn vào nút Nén Ngay Bây Giờ để giảm dung lượng.
+                        Chờ
+                        cho
+                        đến khi quá trình hoàn tất.</p>
+                </div>
+                <div class="sapxep">
+                    <img class="sapxep_img" src="../../../public/images/compress-image/hinhrefer7.webp" alt="">
+                    <p class="al"><strong class="number">3</strong> <strong>Tải xuống</strong> </p>
+                    <p class="al">Tải các ảnh đã được nén xuống và yên tâm sử dụng. Ảnh tải xuống không chứa watermark.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="nen2">
+            <div>
+                <h5 class="title3">Công Cụ Giảm Dung Lượng KB Ảnh Hữu Ích </h5>
+                <div>
+                    <div>
+                        <div class="nen2_muc1">
+                            <h1>Tăng Tốc Độ Trang Web</h1>
+                            <p>Nén ảnh để tối ưu hóa trang web một cách nhanh chóng và dễ dàng. Công cụ nén ảnh SnapEdit
+                                là
+                                công cụ
+                                không thể thiếu cho các nhà phát triển web và quản trị viên web. Giảm kích thước ảnh lớn
+                                sẽ
+                                tăng tốc
+                                độ trang web.</p>
+                            <div class="fileinputs">
+                                <input id="tryInput" name="tryInput" type="file" class="file" style="display: none;" />
+                                <label for="tryInput">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
+                                <div class="fakefile">
+                                    <input style="display: none;" />
+                                    <img src="../../../public/images/compress-image/hinhref8.webp" style="display: none;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nen2_muc1">
+                            <img class="hinhref8" src="../../../public/images/compress-image/hinhref8.webp" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+                <br><br>
+                <div>
+                    <div class="nen2_muc2">
+                        <h1>Tăng Tốc Độ Truyền Dữ Liệu</h1>
+                        <p class="nen2_p1">Công cụ nén ảnh của SnapEdit cung cấp giải pháp cho việc kết nối chậm và băng
+                            thông hạn chế. Việc
+                            nén
+                            dung lượng ảnh, làm tăng tốc độ truyền dữ liệu, cải thiện giao tiếp và tiết kiệm thời gian.
+                        </p>
+                        <input type="file" name="uploadfile" id="img" style="display:none;" />
+                        <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
+                    </div>
+                    <div class="nen2_muc1">
+                        <img class="hinhref9" src="../../../public/images/compress-image/hinhref9.webp" alt="">
+                    </div>
+                </div>
+                <br><br>
+                <div>
+                    <div class="nen2_muc1">
+                        <h1>Tối Ưu Quản Lý Lưu Trữ</h1>
+                        <p>Công cụ nén ảnh của chúng tôi cũng giúp quản lý lưu trữ đám mây một cách hiệu quả hơn. Việc
+                            giảm
+                            dung
+                            lượng ảnh giúp bạn giải phóng đáng kể không gian và giảm chi phí lưu trữ. Điều này hữu ích
+                            cho
+                            việc
+                            lưu trữ, quản lý ảnh và làm việc với các thư viện ảnh lớn.</p>
+                        <input type="file" name="uploadfile" id="img" style="display:none;" />
+                        <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
+                    </div>
+                    <div class="nen2_muc1">
+                        <img class="hinhref8" src="../../../public/images/compress-image/hinhref10.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="muc3lon">
+            <div>
+                <div class="muc3">
+                    <div class="muc3_1">
+                        <img src="../../../public/images/compress-image/Frame_1.png" alt="">
+                    </div>
+                    <div class="muc3_2">
+                        <h3>Nén ảnh chất lượng cao</h3>
+                        <p>SnapEdit sử dụng phương pháp nén tập tin lossy nhằm loại bỏ dữ liệu không quan trọng với mắt
+                            người
+                            dùng. Phương pháp này dẫn đến tỷ lệ nén cao hơn nhiều so với phương pháp nén lossless mà vẫn
+                            đảm
+                            bảo chất
+                            lượng ảnh.</p>
+                    </div>
+                </div>
+                <div class="muc3">
+                    <div class="muc3_1">
+                        <img src="../../../public/images/compress-image/Frame_2.png" alt="">
+                    </div>
+                    <div class="muc3_2">
+                        <h3>Chấp nhận nhiều định dạng ảnh</h3>
+                        <p>Công cụ nén ảnh của chúng tôi chấp nhận các tệp PNG, JPEG và JPG. Bạn có thể tải lên tối đa
+                            50
+                            ảnh
+                            mỗi lần để xử lý hàng hoạt</p>
+                    </div>
+                </div>
+                <div class="muc3">
+                    <div class="muc3_1">
+                        <img src="../../../public/images/compress-image/Frame_3.png" alt="">
+                    </div>
+                    <div class="muc3_2">
+                        <h3>An toàn sử dụng</h3>
+                        <p>Việc nén ảnh được thực hiện bởi máy khách, không phải trên máy chủ, do đó kết quả trả ảnh về
+                            nhanh
+                            chóng và an toàn. Điều này đảm bảo an toàn cho người dùng và không lưu trữ hình ảnh trên
+                            SnapEdit.</p>
+                    </div>
+                </div>
+                <div class="muc3">
+                    <div class="muc3_1">
+                        <img src="../../../public/images/compress-image/Frame_4.png" alt="">
+                    </div>
+                    <div class="muc3_2">
+                        <h3>Dễ sử dụng và miễn phí</h3>
+                        <p>Công cụ nén ảnh online dễ sử dụng và hoàn toàn miễn phí. Giao diện dễ sử dụng, quy trình đơn
+                            giản
+                            và
+                            bạn có thể sử dụng công cụ này trên bất kỳ thiết bị nào có kết nối internet.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="label3">
+                <input type="file" name="uploadfile" id="img" style="display:none;" />
+                <label for="img">Thử ngay <i class="fa-solid fa-arrow-right"></i></label>
+            </div>
+        </div>
+        <br>
+        <div class="muc_cuoi">
+            <h5 class="title3">Câu Hỏi Thường Gặp về Công cụ Nén Ảnh SnapEdit </h5>
+            <hr>
+            <button type="button" class="collapsible">
+                Cách hoạt động của thuật toán nén là gì?
+                <span class="daucong">+</span>
+            </button>
+
+            <div class="content">
+                <p>SnapEdit sử dụng các phương pháp nén tệp tin lossy để loại bỏ dữ liệu không quan trọng từ hình ảnh.
+                    Tỷ lệ
+                    nén phụ thuộc vào mức chất lượng được xác định.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tỷ lệ nén tối đa có thể là bao nhiêu?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>SnapEdit có thể giảm kích thước ảnh lên đến 95%. Tuy nhiên, việc nén quá mức có thể ảnh hưởng đến
+                    chất lượng ảnh.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tôi có thể điều chỉnh tỷ lệ nén/chất lượng không?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>Không, người dùng không thể điều chỉnh tỷ lệ nén hoặc chất lượng đầu ra.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">SnapEdit có hỗ trợ nén Lossless không?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>Hiện tại, SnapEdit không hỗ trợ nén lossless. SnapEdit tập trung vào việc nén lossy để đạt được tỷ lệ
+                    nén
+                    cao. Chúng tôi sẽ cập nhật với tùy chọn nén lossless trong tương lai gần.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tôi có thể giảm kích thước tệp ảnh GIF hoặc các ảnh tĩnh
+                không?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>Không, bạn chỉ có thể nén các tệp PNG, JPEG và JPG. Tuy nhiên, SnapEdit có thể hỗ trợ các định dạng
+                    mới
+                    trong tương lai như GIF, HEIC, TIFF, WebP.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tôi có thể nén bao nhiêu ảnh?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>SnapEdit có thể xử lý hàng loạt tác vụ. Bạn có thể tải lên tối đa 50 ảnh trong một phiên.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tôi có thể nén ảnh online trên thiết bị di động không?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>Có, SnapEdit có sẵn miễn phí trên iOS và Android.</p>
+            </div>
+            <hr>
+
+            <button type="button" class="collapsible">Tôi có thể giảm kích thước ảnh xuống 20KB không?
+                <span class="daucong">+</span>
+            </button>
+            <div class="content">
+                <p>Chúng tôi không thể đảm bảo kết quả chính xác. Kích thước cuối cùng phụ thuộc vào nhiều yếu tố như
+                    nội dung của ảnh, cài đặt hiện tại của chúng tôi và các định dạng được sử dụng. Tuy nhiên, với công
+                    cụ nén của chúng tôi, bạn có thể giảm kích thước ảnh xuống 20 KB vì quá trình nén của chúng tôi có
+                    nhiều mất mát và tập trung vào việc duy trì chất lượng ảnh.</p>
+            </div>
+            <hr>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SnapEdit</span>
+                    <p>SnapEdit.App - Công cụ chỉnh sửa ảnh trực tuyến miễn phí</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Sản phẩm</h4>
+                        <ul>
+                            <li><a href="/add-watermark">Thêm Watermark</a></li>
+                            <li><a href="/blur-bg">Làm mờ nền</a></li>
+                            <li><a href="/compress-image">Nén ảnh</a></li>
+                            <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Công ty</h4>
+                        <ul>
+                            <li><a href="/about">Giới thiệu</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/careers">Tuyển dụng</a></li>
+                            <li><a href="/contact">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Hỗ trợ</h4>
+                        <ul>
+                            <li><a href="/help">Trung tâm trợ giúp</a></li>
+                            <li><a href="/faq">Câu hỏi thường gặp</a></li>
+                            <li><a href="/privacy">Chính sách bảo mật</a></li>
+                            <li><a href="/terms">Điều khoản sử dụng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SnapEdit.App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
