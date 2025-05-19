@@ -1,422 +1,389 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Làm mờ nền ảnh - SnapEdit.App</title>
-  <meta name="description" content="Làm mờ nền ảnh trực tuyến miễn phí. Công cụ làm mờ nền ảnh chuyên nghiệp, dễ sử dụng và nhanh chóng.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../../assets/css/common.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-content">
-        <a href="/" class="logo">
-          <img src="../../assets/images/logo.svg" alt="SnapEdit Logo">
-          <span>SnapEdit</span>
-        </a>
-        <nav class="nav-menu">
-          <ul>
-            <li class="dropdown">
-              <a href="#">Sản phẩm AI <span class="arrow">▼</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/add-watermark">Thêm Watermark</a></li>
-                <li><a href="/blur-bg">Làm mờ nền</a></li>
-                <li><a href="/compress-image">Nén ảnh</a></li>
-                <li><a href="/convert-image">Chuyển đổi ảnh</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Giá</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <div class="language-switcher">
-            <button class="language-btn">
-              <img src="../../assets/images/flags/vi.svg" alt="Tiếng Việt">
-              <span>Tiếng Việt</span>
-              <span class="arrow">▼</span>
-            </button>
-            <ul class="language-menu">
-              <li><a href="#"><img src="../../assets/images/flags/vi.svg" alt="VI"> Tiếng Việt</a></li>
-              <li><a href="#"><img src="../../assets/images/flags/en.svg" alt="EN"> English</a></li>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnapEdit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onscroll="myFunction()">
+    <header id="header" class="header">
+      <div class="icon">
+        <a href="home.html"
+          ><img src="https://assets.snapedit.app/images/landing/snapedit-logo.svg" alt=""
+        /></a>
+      </div>
+      <nav id="navbar" class="nav">
+        <ul class="d-flex justify-content-between">
+          <li>
+            <a href="home.html">Sản phẩm AI <i class="fa-solid fa-angle-down"></i></a>
+          </li>
+          <li>
+            <a href="about.html">Giải pháp <i class="fa-solid fa-angle-down"></i></a>
+          </li>
+          <li><a href="contact.html">Giá</a></li>
+          <li><a href="blog.html">API</a></li>
+          <li><a href="news.html">Tải App</a></li>
+        </ul>
+      </nav>
+      <div class="user">
+        <a href="">Tiếng Việt <i class="fa-solid fa-angle-down"></i></a>
+        <a href="" class="user-login">Đăng nhập</a>
+        <a href="" class="user-try">Thử miễn phí</a>
+      </div>
+    </header>
+    <section class="blurFace container">
+      <div class="blurFace-left d-flex flex-column w-50">
+        <div class="blurFace-left-content">
+          <h1 style="font-size: 54px; font-weight: 700">Làm mờ nền ảnh miễn phí</h1>
+          <p class="fs-5 fw-light">
+            Biến hoá hình ảnh ngay lập tức với công cụ làm mờ nền ảnh của SnapEdit. Thử miễn phí!
+          </p>
+          <img src="https://assets.snapedit.app/images/blur-bg/hero_banner_static.webp" alt="" />
+        </div>
+      </div>
+      <div class="blurFace-right">
+        <label class="up-img" for="file" style="cursor: pointer"
+          ><i class="fa-solid fa-arrow-up-from-bracket" class="text-white"></i> Tải lên hình
+          ảnh</label
+        >
+        <input type="file" id="file" style="display: none" />
+        <span class="mx-1 mt-3">Hoặc chỉ cần thả vào đây Crtl + V để dán hình ảnh</span>
+        <hr class="w-50" />
+        <span class="mb-3">Không có hình ảnh? Thử một trong những cái này</span>
+
+        <div class="img-try">
+          <img src="https://assets.snapedit.app/images/blur-face/demo-thumbnail-1.jpg" alt="" />
+          <img src="https://assets.snapedit.app/images/blur-face/demo-thumbnail-2.jpg" alt="" />
+          <img src="https://assets.snapedit.app/images/blur-face/demo-thumbnail-3.jpg" alt="" />
+          <img src="https://assets.snapedit.app/images/blur-face/demo-thumbnail-4.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="howToBlur">
+      <div class="container">
+        <h1 class="fw-bold">Cách làm mờ nền ảnh online</h1>
+        <p class="fw-light my-3 px-5 text-center">
+          Không cần học cài đặt các thông số phức tạp về khẩu độ và ống kính ở máy ảnh; công cụ của
+          chúng tôi giúp bạn có ảnh với nền mờ ảo và làm nổi bật đối tượng chủ thể chỉ với vài cú
+          nhấp chuột.
+        </p>
+        <div class="howToBlur-list-items">
+          <div class="howToBlur-item">
+            <img src="https://assets.snapedit.app/images/blur-bg/Step_1.webp" alt="" />
+            <div class="items-desc">
+              <div class="item-title">
+                <p class="num-step">1</p>
+                <p>Tải ảnh lên</p>
+              </div>
+              <span class="desc">Tải lên hoặc kéo thả ảnh vào công cụ làm mờ nền</span>
+            </div>
+          </div>
+
+          <div class="howToBlur-item">
+            <img src="https://assets.snapedit.app/images/blur-bg/Step_2.webp" alt="" />
+            <div class="items-desc">
+              <div class="item-title">
+                <p class="num-step">2</p>
+                <p>Làm mờ nền với hiệu ứng AI</p>
+              </div>
+              <span class="desc"
+                >Sau khi tải ảnh lên, công cụ sẽ tự động làm mờ phông nền với mức mặc định là 20.
+                Trong bước này, bạn có thể chọn hiệu ứng và điều chỉnh mức độ làm mờ theo ý
+                thích.</span
+              >
+            </div>
+          </div>
+
+          <div class="howToBlur-item">
+            <img src="https://assets.snapedit.app/images/blur-bg/Step_3.webp" alt="" />
+            <div class="items-desc">
+              <div class="item-title">
+                <p class="num-step">3</p>
+                <p>Lưu ảnh về máy</p>
+              </div>
+              <span class="desc">Tải ảnh mới của bạn với nền đã được làm mờ.</span>
+            </div>
+          </div>
+        </div>
+        <div class="download-app">
+          <div class="download-app-titile d-flex flex-column align-items-start">
+            <h1 class="fw-bold">Tải Ứng Dụng SnapEdit Mobile</h1>
+            <span class="fw-light text-start">
+              Ứng dụng SnapEdit có sẵn trên Apple Store & Google Play Store. Ứng dụng của chúng tôi
+              đã được sử dụng bởi người dùng trên khắp thế giới để làm sắc nét ảnh.
+            </span>
+          </div>
+          <div class="download-app-link d-flex">
+            <div class="app-link-item mx-2">
+              <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499"
+                ><img src="https://assets.snapedit.app/images/apple-download.svg" alt=""
+              /></a>
+            </div>
+            <div class="app-link-item mx-2">
+              <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove"
+                ><img src="https://assets.snapedit.app/images/android-download.svg" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="introBlur">
+      <div class="container">
+        <div class="title">
+          <h1 style="font-size: 56px" class="fw-bold mb-5">
+            Công Cụ Làm Mờ Nền <br />
+            <span class="fw-bold bg-gradient-text my-2"> Cho Viền Hoàn Hảo </span>
+          </h1>
+        </div>
+        <div class="introBlur-list">
+          <div class="introBlur-items d-flex align-item-center justify-content-between">
+            <div class="item-title w-50 pe-4 pt-5">
+              <h2 class="fs-2 my-3">Thêm chiều sâu cho ảnh chân dung</h2>
+              <p class="fw-light my-3">
+                Sau khi được làm mờ nền, ảnh chân dung trở nên có chiều sâu hơn, thu hút sự chú ý
+                vào các đặc điểm trên khuôn mặt người được chụp ảnh.
+              </p>
+              <label class="text-primary" for="introUpFile"
+                >Thử ngay <i class="fa-solid fa-arrow-right text-primary mx-1"></i
+              ></label>
+              <input type="file" id="introUpFile" style="display: none" />
+            </div>
+            <div class="item-image w-50">
+              <img
+                src="https://assets.snapedit.app/images/blur-bg/Frame_1.webp"
+                alt=""
+                class="w-100 ps-4"
+              />
+            </div>
+          </div>
+
+          <div class="introBlur-items d-flex align-item-center justify-content-between my-5">
+            <div class="item-image w-50">
+              <img
+                src="https://assets.snapedit.app/images/blur-bg/Frame_2.webp"
+                alt=""
+                class="w-100 pe-4"
+              />
+            </div>
+            <div class="item-title w-50 ps-4 pt-5">
+              <h2 class="fs-2 my-3">Làm nổi bật ảnh sản phẩm</h2>
+              <p class="fw-light my-3">
+                Tương tự như ảnh chân dung, công cụ giúp làm mờ nền giúp tập trung sự chú ý vào sản
+                phẩm. Nó làm nổi bật các đặc điểm chính và tạo ra những hình ảnh thương mại điện tử
+                hấp dẫn thúc đẩy doanh số.
+              </p>
+              <label class="text-primary" for="introUpFile"
+                >Thử ngay <i class="fa-solid fa-arrow-right text-primary mx-1"></i
+              ></label>
+              <input type="file" id="introUpFile" style="display: none" />
+            </div>
+          </div>
+
+          <div class="introBlur-items d-flex align-item-center justify-content-between">
+            <div class="item-title w-50 pe-5 pt-5">
+              <h2 class="fs-2 my-3">Tách biệt các yếu tố cụ thể trong cảnh</h2>
+              <p class="fw-light my-3">
+                Công cụ cũng giúp cho các nhiếp ảnh gia muốn thu hút sự chú ý vào các yếu tố cụ thể
+                trong ảnh bằng cách làm mờ mọi thứ khác xung quanh. Từ đó mà những ảnh chụp cảnh vật
+                cũng trở nên hấp dẫn hơn.
+              </p>
+              <label class="text-primary" for="introUpFile"
+                >Thử ngay <i class="fa-solid fa-arrow-right text-primary mx-1"></i
+              ></label>
+              <input type="file" id="introUpFile" style="display: none" />
+            </div>
+            <div class="item-image w-50">
+              <img
+                src="https://assets.snapedit.app/images/blur-bg/Frame_3.webp"
+                alt=""
+                class="w-100 ps-4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <div class="footer-logo">
+            <svg
+              width="174"
+              height="40"
+              viewBox="0 0 174 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.2043 6.38889C8.07191 6.38889 6.34323 8.13 6.34323 10.2778V29.7222C6.34323 31.87 8.07191 33.6111 10.2043 33.6111H29.5099C31.6423 33.6111 33.371 31.87 33.371 29.7222V20.625C33.371 20.2798 33.6488 20 33.9915 20H36.6116C36.9543 20 37.2321 20.2798 37.2321 20.625V29.7222C37.2321 34.0178 33.7748 37.5 29.5099 37.5H10.2043C5.93947 37.5 2.48212 34.0178 2.48212 29.7222V10.2778C2.48212 5.98223 5.93947 2.5 10.2043 2.5H19.2366C19.5793 2.5 19.8571 2.77982 19.8571 3.125V5.76389C19.8571 6.10907 19.5793 6.38889 19.2366 6.38889H10.2043Z"
+                fill="white"
+              ></path>
+              <path
+                d="M25.3038 2.5C24.9611 2.5 24.6832 2.77982 24.6832 3.125V5.76389C24.6832 6.10907 24.9611 6.38889 25.3038 6.38889H27.9238C28.2665 6.38889 28.5443 6.10907 28.5443 5.76389V3.125C28.5443 2.77982 28.2665 2.5 27.9238 2.5H25.3038Z"
+                fill="white"
+              ></path>
+              <path
+                d="M33.9913 2.5C33.6486 2.5 33.3707 2.77982 33.3707 3.125V5.76389C33.3707 6.10907 33.6486 6.38889 33.9913 6.38889H36.6113C36.954 6.38889 37.2318 6.10907 37.2318 5.76389V3.125C37.2318 2.77982 36.954 2.5 36.6113 2.5H33.9913Z"
+                fill="white"
+              ></path>
+              <path
+                d="M33.3707 11.875C33.3707 11.5298 33.6486 11.25 33.9913 11.25H36.6113C36.954 11.25 37.2318 11.5298 37.2318 11.875V14.5139C37.2318 14.8591 36.954 15.1389 36.6113 15.1389H33.9913C33.6486 15.1389 33.3707 14.8591 33.3707 14.5139V11.875Z"
+                fill="white"
+              ></path>
+              <path
+                d="M25.5867 27.7286C24.5927 28.466 23.3246 29.0129 21.7823 29.3693C20.3213 29.7069 19.0066 29.7869 17.8384 29.6093C16.6683 29.4236 15.6894 29.0087 14.9019 28.3645C14.1206 27.7103 13.5727 26.8429 13.2583 25.7625L13.1958 25.5445L17.4694 24.5571L17.5067 24.6646C17.6292 25.015 17.857 25.3022 18.19 25.5265C18.5212 25.7426 18.9327 25.8798 19.4245 25.9383C19.9163 25.9968 20.4584 25.9576 21.051 25.8207C21.6354 25.6856 22.1241 25.4866 22.517 25.2237C22.91 24.9608 23.1906 24.655 23.359 24.3063C23.5354 23.9557 23.5818 23.5965 23.498 23.2286L23.4952 23.2164C23.3816 22.7177 23.079 22.3831 22.5873 22.2127C22.0957 22.0424 21.3112 21.9741 20.2338 22.0079L18.3386 22.0714C16.4042 22.1312 14.9112 21.8221 13.8597 21.1443C12.8163 20.4646 12.1372 19.4339 11.8225 18.0523L11.8197 18.04C11.5653 16.8854 11.6415 15.8136 12.0485 14.8246C12.4537 13.8274 13.1267 12.9749 14.0676 12.2669C15.0067 11.5508 16.1499 11.0371 17.4974 10.7257C18.9665 10.3863 20.2615 10.3323 21.3822 10.5639C22.5092 10.7854 23.445 11.2361 24.1894 11.916C24.9319 12.5878 25.467 13.4366 25.7947 14.4624L25.8404 14.6067L21.7007 15.5633L21.6457 15.434C21.4951 15.0729 21.2632 14.7866 20.9502 14.5749C20.6433 14.3532 20.2653 14.2126 19.8159 14.1529C19.3666 14.0932 18.87 14.1262 18.3261 14.2518C17.7985 14.3738 17.3617 14.5565 17.0156 14.7999C16.6676 15.0352 16.4188 15.3122 16.2692 15.6307C16.1259 15.9392 16.0943 16.2692 16.1743 16.6208L16.1771 16.633C16.2926 17.1399 16.5958 17.4958 17.0868 17.7008C17.584 17.8957 18.3279 17.9733 19.3186 17.9338L21.2137 17.8702C23.1725 17.8049 24.6824 18.0756 25.7434 18.6824C26.8025 19.281 27.495 20.2956 27.8209 21.7263L27.8237 21.7386C28.0974 22.9404 28.0395 24.0553 27.6499 25.0833C27.2666 26.1012 26.5789 26.983 25.5867 27.7286Z"
+                fill="white"
+              ></path>
+              <path
+                d="M54.6927 31.2296C56.5047 31.2296 58.0651 30.9388 59.3738 30.3571C60.6925 29.7653 61.7042 28.9388 62.4089 27.8776C63.1236 26.8061 63.481 25.5408 63.481 24.0816V24.0663C63.481 22.3418 62.9525 20.9847 61.8955 19.9949C60.8485 19.0051 59.1724 18.2704 56.8672 17.7908L54.5568 17.3163C53.2784 17.051 52.3522 16.6939 51.7784 16.2449C51.2147 15.7857 50.9328 15.199 50.9328 14.4847V14.4694C50.9328 13.9184 51.0889 13.4439 51.4009 13.0459C51.713 12.6378 52.1509 12.3214 52.7146 12.0969C53.2784 11.8724 53.9327 11.7602 54.6776 11.7602C55.4427 11.7602 56.1121 11.8776 56.686 12.1122C57.2698 12.3367 57.7329 12.648 58.0752 13.0459C58.4275 13.4439 58.649 13.9082 58.7396 14.4388L58.7698 14.6224H63.0582L63.0431 14.4235C62.9525 13.1888 62.5649 12.0918 61.8804 11.1327C61.1958 10.1633 60.2445 9.40306 59.0265 8.85204C57.8185 8.29082 56.3688 8.0102 54.6776 8.0102C53.067 8.0102 51.6375 8.29592 50.3892 8.86735C49.141 9.42857 48.1595 10.2194 47.4447 11.2398C46.73 12.2602 46.3726 13.4541 46.3726 14.8214V14.8367C46.3726 16.5102 46.886 17.8827 47.9128 18.9541C48.9396 20.0255 50.5855 20.7959 52.8505 21.2653L55.1457 21.7398C56.5047 22.0255 57.4712 22.3878 58.045 22.8265C58.6288 23.2653 58.9208 23.8469 58.9208 24.5714V24.5867C58.9208 25.148 58.7446 25.648 58.3923 26.0867C58.05 26.5153 57.5718 26.852 56.9578 27.0969C56.3437 27.3418 55.6289 27.4643 54.8135 27.4643C53.9679 27.4643 53.218 27.3469 52.5636 27.1122C51.9093 26.8776 51.3858 26.5561 50.9932 26.148C50.6107 25.7296 50.3892 25.2449 50.3288 24.6939L50.3137 24.5408H45.9196L45.9347 24.7857C46.0253 26.0918 46.433 27.2296 47.1578 28.199C47.8927 29.1582 48.8994 29.9031 50.1778 30.4337C51.4563 30.9643 52.9613 31.2296 54.6927 31.2296Z"
+                fill="white"
+              ></path>
+              <path
+                d="M66.1247 30.6633H70.5339V20.9133C70.5339 20.148 70.6648 19.4847 70.9265 18.9235C71.1983 18.3622 71.5758 17.9286 72.059 17.6224C72.5523 17.3061 73.1361 17.148 73.8106 17.148C74.8575 17.148 75.6277 17.4541 76.1209 18.0663C76.6142 18.6786 76.8608 19.5816 76.8608 20.7755V30.6633H81.27V19.7653C81.27 17.7449 80.7818 16.1888 79.8053 15.0969C78.8389 13.9949 77.4296 13.4439 75.5773 13.4439C74.3894 13.4439 73.3928 13.7092 72.5875 14.2398C71.7822 14.7704 71.1882 15.4949 70.8057 16.4133H70.5339V13.8112H66.1247V30.6633Z"
+                fill="white"
+              ></path>
+              <path
+                d="M88.8364 30.9235C89.5612 30.9235 90.2306 30.8265 90.8447 30.6327C91.4688 30.4286 92.0124 30.1429 92.4755 29.7755C92.9486 29.398 93.3261 28.949 93.608 28.4286H93.8798V30.6633H98.2286V19.1531C98.2286 17.9592 97.9568 16.9388 97.4132 16.0918C96.8797 15.2347 96.0995 14.5816 95.0727 14.1327C94.0459 13.6735 92.7976 13.4439 91.3279 13.4439C89.9387 13.4439 88.7156 13.648 87.6586 14.0561C86.6116 14.4643 85.7761 15.0357 85.152 15.7704C84.5379 16.5051 84.1705 17.3673 84.0496 18.3571L84.0345 18.4949H88.1116L88.1418 18.4337C88.3129 17.9337 88.6451 17.551 89.1384 17.2857C89.6417 17.0102 90.291 16.8724 91.0863 16.8724C91.9923 16.8724 92.6818 17.0714 93.155 17.4694C93.6382 17.8571 93.8798 18.4184 93.8798 19.1531V24.5255C93.8798 25.1173 93.7237 25.6531 93.4117 26.1327C93.0996 26.602 92.6768 26.9745 92.1433 27.25C91.6097 27.5255 91.0007 27.6633 90.3162 27.6633C89.5511 27.6633 88.927 27.4796 88.4438 27.1122C87.9606 26.7449 87.719 26.2398 87.719 25.5969V25.5663C87.719 24.9541 87.9505 24.4694 88.4136 24.1122C88.8766 23.7551 89.5813 23.551 90.5276 23.5L96.0542 23.1327V20.4082L89.8632 20.7908C87.7995 20.9133 86.209 21.4082 85.0916 22.2755C83.9742 23.1327 83.4154 24.3214 83.4154 25.8418V25.8724C83.4154 26.8929 83.647 27.7857 84.1101 28.551C84.5731 29.3061 85.2124 29.8929 86.0278 30.3112C86.8532 30.7194 87.7894 30.9235 88.8364 30.9235Z"
+                fill="white"
+              ></path>
+              <path
+                d="M101.31 36.25H105.719V27.9694H105.991C106.273 28.5816 106.656 29.1071 107.139 29.5459C107.632 29.9847 108.201 30.3265 108.845 30.5714C109.499 30.8061 110.209 30.9235 110.974 30.9235C112.374 30.9235 113.576 30.5765 114.583 29.8827C115.59 29.1888 116.365 28.1939 116.909 26.898C117.452 25.602 117.724 24.051 117.724 22.2449V22.2143C117.724 20.4184 117.447 18.8776 116.893 17.5918C116.35 16.2959 115.575 15.2959 114.568 14.5918C113.561 13.8878 112.363 13.5357 110.974 13.5357C110.189 13.5357 109.474 13.6531 108.83 13.8878C108.186 14.1122 107.622 14.4388 107.139 14.8673C106.666 15.2959 106.283 15.8112 105.991 16.4133H105.719V13.8112H101.31V36.25ZM109.464 27.2194C108.699 27.2194 108.03 27.0204 107.456 26.6224C106.892 26.2245 106.454 25.6531 106.142 24.9082C105.83 24.1531 105.674 23.2653 105.674 22.2449V22.2143C105.674 21.1735 105.825 20.2857 106.127 19.551C106.439 18.8061 106.877 18.2347 107.441 17.8367C108.015 17.4388 108.689 17.2398 109.464 17.2398C110.249 17.2398 110.919 17.4388 111.473 17.8367C112.036 18.2347 112.469 18.8061 112.771 19.551C113.083 20.2959 113.239 21.1837 113.239 22.2143V22.2449C113.239 23.2755 113.083 24.1633 112.771 24.9082C112.469 25.6531 112.036 26.2245 111.473 26.6224C110.919 27.0204 110.249 27.2194 109.464 27.2194Z"
+                fill="white"
+              ></path>
+              <path
+                d="M120.534 30.6633H134.969V26.852H125.094V21.2653H134.411V17.7143H125.094V12.3878H134.969V8.57653H120.534V30.6633Z"
+                fill="white"
+              ></path>
+              <path
+                d="M144.031 30.9235C145.208 30.9235 146.225 30.6735 147.081 30.1735C147.937 29.6633 148.576 28.9541 148.999 28.0459H149.27V30.6633H153.68V7.36735H149.27V16.5051H148.999C148.586 15.5867 147.937 14.8622 147.051 14.3316C146.175 13.801 145.168 13.5357 144.031 13.5357C142.621 13.5357 141.413 13.8827 140.407 14.5765C139.4 15.2704 138.625 16.2653 138.081 17.5612C137.548 18.8571 137.281 20.4082 137.281 22.2143V22.2449C137.281 24.0408 137.553 25.5867 138.096 26.8827C138.65 28.1786 139.43 29.1786 140.437 29.8827C141.454 30.5765 142.652 30.9235 144.031 30.9235ZM145.526 27.2194C144.75 27.2194 144.081 27.0204 143.517 26.6224C142.954 26.2245 142.521 25.6531 142.219 24.9082C141.917 24.1633 141.766 23.2755 141.766 22.2449V22.2143C141.766 21.1837 141.917 20.301 142.219 19.5663C142.521 18.8214 142.954 18.25 143.517 17.852C144.091 17.4439 144.76 17.2398 145.526 17.2398C146.301 17.2398 146.97 17.4439 147.534 17.852C148.108 18.25 148.546 18.8214 148.848 19.5663C149.16 20.301 149.316 21.1888 149.316 22.2296V22.2602C149.316 23.2806 149.16 24.1633 148.848 24.9082C148.546 25.6531 148.113 26.2245 147.549 26.6224C146.985 27.0204 146.311 27.2194 145.526 27.2194Z"
+                fill="white"
+              ></path>
+              <path
+                d="M157.033 30.6633H161.442V13.8112H157.033V30.6633ZM159.253 11.2245C159.937 11.2245 160.521 10.9847 161.004 10.5051C161.488 10.0153 161.729 9.42857 161.729 8.7449C161.729 8.05102 161.488 7.46429 161.004 6.98469C160.521 6.4949 159.937 6.25 159.253 6.25C158.578 6.25 157.994 6.4949 157.501 6.98469C157.008 7.46429 156.761 8.05102 156.761 8.7449C156.761 9.42857 157.008 10.0153 157.501 10.5051C157.994 10.9847 158.578 11.2245 159.253 11.2245Z"
+                fill="white"
+              ></path>
+              <path
+                d="M171.545 30.7245C171.978 30.7245 172.386 30.7041 172.768 30.6633C173.151 30.6224 173.478 30.5765 173.75 30.5255V27.2041C173.539 27.2245 173.337 27.2449 173.146 27.2653C172.965 27.2755 172.733 27.2806 172.451 27.2806C171.706 27.2806 171.163 27.1071 170.821 26.7602C170.488 26.4031 170.322 25.8469 170.322 25.0918V17.1786H173.75V13.8112H170.322V9.78571H165.868V13.8112H163.301V17.1786H165.868V26.1173C165.868 27.75 166.311 28.9286 167.197 29.6531C168.082 30.3673 169.532 30.7245 171.545 30.7245Z"
+                fill="white"
+              ></path>
+            </svg>
+          </div>
+          <p class="footer-description">
+            Loại bỏ đối tượng nhanh hơn & tốt hơn với công nghệ AI mạnh mẽ
+          </p>
+        </div>
+        <div class="col-md-1">
+          <div class="footer-links-column">
+            <h6 class="footer-links-title">Tính năng mới</h6>
+            <ul class="footer-links-list">
+              <li class="footer-links-item"><a href="#">Thêm watermark</a></li>
+              <li class="footer-links-item"><a href="#">Chuyển Đổi Ảnh</a></li>
+              <li class="footer-links-item"><a href="#">Nén Ảnh</a></li>
+              <li class="footer-links-item"><a href="#">Làm Mờ Nền</a></li>
             </ul>
           </div>
-          <a href="#" class="login-link">Đăng nhập</a>
-          <a href="#" class="btn btn-primary free-btn">Thử miễn phí</a>
-          <button class="mobile-menu-btn">
-            <span></span><span></span><span></span>
-          </button>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Làm mờ nền ảnh</h1>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Làm mờ nền ảnh miễn phí</h1>
-        <p>Biến hóa hình ảnh ngay lập tức với công cụ <a href="#">làm mờ nền ảnh</a> của SnapEdit. Thử miễn phí!</p>
-        <button class="btn btn-primary upload-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
-          </svg>
-          Tải lên hình ảnh
-        </button>
-      </div>
-      <div class="hero-image">
-        <div class="before-after-container">
-          <img src="../../../public/images/blur-bg/hero-before.webp" alt="Ảnh gốc trước khi làm mờ nền" class="before-image">
-          <img src="../../../public/images/blur-bg/hero-after.webp" alt="Ảnh sau khi làm mờ nền" class="after-image">
-          <div class="slider-handle"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upload Section -->
-  <section class="upload-section">
-    <div class="container">
-      <div class="upload-area" id="uploadArea">
-        <div class="upload-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
-          </svg>
-        </div>
-        <h3>Hoặc chỉ cần thả vào đây</h3>
-        <p>Ctrl + V để dán hình ảnh</p>
-        <input type="file" id="fileInput" class="file-input" accept="image/*">
-      </div>
-
-      <div class="sample-images">
-        <p>Không có hình ảnh? Thử một trong những cái này</p>
-        <div class="sample-grid">
-          <div class="sample-image" data-src="../../../public/images/samples/sample1.jpg">
-            <img src="../../../public/images/samples/sample1.jpg" alt="Sample image 1">
-          </div>
-          <div class="sample-image" data-src="../../../public/images/samples/sample2.jpg">
-            <img src="../../../public/images/samples/sample2.jpg" alt="Sample image 2">
-          </div>
-          <div class="sample-image" data-src="../../../public/images/samples/sample3.jpg">
-            <img src="../../../public/images/samples/sample3.jpg" alt="Sample image 3">
-          </div>
-          <div class="sample-image" data-src="../../../public/images/samples/sample4.jpg">
-            <img src="../../../public/images/samples/sample4.jpg" alt="Sample image 4">
+        <div class="col-md-1">
+          <div class="footer-links-column">
+            <h6 class="footer-links-title">Công cụ</h6>
+            <ul class="footer-links-list">
+              <li class="footer-links-item"><a href="#">Xóa Vật Thể</a></li>
+              <li class="footer-links-item"><a href="#">Xóa Nền Ảnh</a></li>
+              <li class="footer-links-item"><a href="#">Làm Nét Ảnh</a></li>
+              <li class="footer-links-item"><a href="#">Xóa Chữ Trên Ảnh</a></li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Steps Section -->
-  <section class="steps-section">
-    <div class="container">
-      <h2 class="section-title">Cách làm mờ nền ảnh online</h2>
-      <p class="section-description">Không cần học cài đặt các thông số phức tạp về khẩu độ và ống kính ở máy ảnh; công cụ của chúng tôi giúp bạn có ảnh với nền mờ ảo và làm nổi bật đối tượng chủ thể chỉ với vài cú nhấp chuột.</p>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-image">
-            <img src="../../../public/images/blur-bg/step-1.webp" alt="Tải ảnh lên">
-          </div>
-          <h3>Tải ảnh lên</h3>
-          <p>Tải lên hoặc kéo thả ảnh vào công cụ làm mờ nền</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-image">
-            <img src="../../../public/images/blur-bg/step-2.webp" alt="Làm mờ nền với hiệu ứng AI">
-          </div>
-          <h3>Làm mờ nền với hiệu ứng AI</h3>
-          <p>Sau khi tải ảnh lên, công cụ sẽ tự động làm mờ phông nền với mức mặc định là 20. Trong bước này, bạn có thể chọn hiệu ứng và điều chỉnh mức độ làm mờ theo ý thích.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-image">
-            <img src="../../../public/images/blur-bg/step-3.webp" alt="Lưu ảnh về máy">
-          </div>
-          <h3>Lưu ảnh về máy</h3>
-          <p>Tải ảnh mới của bạn với nền đã được làm mờ.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- App Download Section -->
-  <section class="app-download">
-    <div class="container">
-      <div class="app-content">
-        <div class="app-text">
-          <h2>Tải Ứng Dụng Di Động SnapEdit</h2>
-          <p>Ứng dụng SnapEdit có sẵn trên Apple Store & Google Play Store. Ứng dụng của chúng tôi đã được sử dụng bởi người dùng trên khắp thế giới để làm sắc nét ảnh.</p>
-          <div class="app-buttons">
-            <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499" target="_blank" class="app-button">
-              <img src="../../../public/images/app-store-badge.svg" alt="App Store">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove" target="_blank" class="app-button">
-              <img src="../../../public/images/google-play-badge.svg" alt="Google Play">
-            </a>
+        <div class="col-md-2">
+          <div class="footer-links-column">
+            <h6 class="footer-links-title">Trợ giúp</h6>
+            <ul class="footer-links-list">
+              <li class="footer-links-item"><a href="#">Blog & Hướng dẫn</a></li>
+              <li class="footer-links-item"><a href="#">Chính sách</a></li>
+              <li class="footer-links-item"><a href="#">Điều khoản dịch vụ</a></li>
+              <li class="footer-links-item"><a href="#">Về chúng tôi</a></li>
+              <li class="footer-links-item"><a href="#">Liên hệ chúng tôi</a></li>
+              <li class="footer-links-item"><a href="#">Tác giả</a></li>
+            </ul>
           </div>
         </div>
-        <div class="app-qr">
-          <img src="../../../public/images/qrcode.png" alt="QR Code SnapEdit">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features-section">
-    <div class="container">
-      <div class="features-header">
-        <h2>Công Cụ Làm Mờ Nền<br /><span>Cho Viên Hoàn Hảo</span></h2>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-image">
-            <div class="before-after">
-              <img src="../../../public/images/blur-bg/feature-1-before.webp" alt="Ảnh chân dung trước khi làm mờ nền" class="before-img">
-              <img src="../../../public/images/blur-bg/feature-1-after.webp" alt="Ảnh chân dung sau khi làm mờ nền" class="after-img">
-              <div class="divider">
-                <div class="arrow-left"></div>
-                <div class="arrow-right"></div>
+        <div class="col-md-2">
+          <div class="footer-links-column">
+            <h6 class="footer-links-title">Nhận ứng dụng di động của chúng tôi</h6>
+            <div class="footer-app-buttons">
+              <div class="my-2">
+                <a href="https://apps.apple.com/us/app/snapedit-remove-objects/id1611282499"
+                  ><img
+                    class="w-50"
+                    src="https://assets.snapedit.app/images/apple-download.svg"
+                    alt=""
+                /></a>
               </div>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Thêm chiều sâu cho ảnh chân dung</h3>
-            <p>Sau khi được làm mờ nền, ảnh chân dung trở nên có chiều sâu hơn, thu hút sự chú ý vào các đặc điểm trên khuôn mặt người được chụp ảnh.</p>
-            <a href="#" class="btn btn-outline">Thử ngay</a>
-          </div>
-        </div>
-
-        <div class="feature-card reverse">
-          <div class="feature-content">
-            <h3>Làm nổi bật ảnh sản phẩm</h3>
-            <p>Tương tự như ảnh chân dung, công cụ giúp làm mờ nền giúp tập trung sự chú ý vào sản phẩm. Nó làm nổi bật các đặc điểm chính và tạo ra những hình ảnh thương mại điện tử hấp dẫn thúc đẩy doanh số.</p>
-            <a href="#" class="btn btn-outline">Thử ngay</a>
-          </div>
-          <div class="feature-image">
-            <div class="before-after">
-              <img src="../../../public/images/blur-bg/feature-2-before.webp" alt="Ảnh sản phẩm trước khi làm mờ nền" class="before-img">
-              <img src="../../../public/images/blur-bg/feature-2-after.webp" alt="Ảnh sản phẩm sau khi làm mờ nền" class="after-img">
-              <div class="divider">
-                <div class="arrow-left"></div>
-                <div class="arrow-right"></div>
+              <div class="my-2">
+                <a href="https://play.google.com/store/apps/details?id=snapedit.app.remove"
+                  ><img
+                    class="w-50"
+                    src="https://assets.snapedit.app/images/android-download.svg"
+                    alt=""
+                /></a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="feature-card">
-          <div class="feature-image">
-            <div class="before-after">
-              <img src="../../../public/images/blur-bg/feature-3-before.webp" alt="Ảnh cảnh vật trước khi làm mờ nền" class="before-img">
-              <img src="../../../public/images/blur-bg/feature-3-after.webp" alt="Ảnh cảnh vật sau khi làm mờ nền" class="after-img">
-              <div class="divider">
-                <div class="arrow-left"></div>
-                <div class="arrow-right"></div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Tách biệt các yếu tố có thể trong cảnh</h3>
-            <p>Công cụ cũng giúp cho các nhiếp ảnh gia muốn thu hút sự chú ý vào các yếu tố cụ thể trong ảnh bằng cách làm mờ mọi thứ khác xung quanh. Từ đó những ảnh chụp cảnh vật cũng trở nên hấp dẫn hơn.</p>
-            <a href="#" class="btn btn-outline">Thử ngay</a>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section class="benefits-section">
-    <div class="container">
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.25-11.25v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 1.5 0zm0 4v4.25a.75.75 0 0 1-1.5 0v-4.25a.75.75 0 0 1 1.5 0z"/>
-            </svg>
-          </div>
-          <h3>Kết quả tốt hơn</h3>
-          <p>Công cụ tự động xác định chủ thể của ảnh chính xác, tạo hiệu ứng làm mờ mượt mà, tự nhiên. So với các công cụ khác, nó mang đến kết quả tốt hơn với đường viền không lem, sắc nét.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M2 6h5v8.5a.5.5 0 0 0 1 0V6h5a.5.5 0 0 0 0-1H9V.5a.5.5 0 0 0-1 0V5H3a.5.5 0 0 0 0 1z"/>
-            </svg>
-          </div>
-          <h3>Hiệu ứng sáng tạo</h3>
-          <p>SnapEdit có 5 hiệu ứng làm mờ ảnh: cổ điển, pixelate, chuyển động, radial, và zoom. Bạn có thể tạo nền bokeh với ánh sáng mờ ảo đẹp mắt.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
-            </svg>
-          </div>
-          <h3>Tải xuống HD</h3>
-          <p>Thêm vào đó, bạn có thể tải xuống hình ảnh đã cải thiện với chất lượng HD.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg>
-          </div>
-          <h3>Làm mờ nền trực tuyến</h3>
-          <p>Không cần cài đặt ứng dụng, bạn có thể sử dụng công cụ này trên điện thoại iPhone, Samsung, máy tính bảng hoặc PC.</p>
-        </div>
+      <div class="footer-bottom">
+        <span class="fw-normal">2025 SnapTeam. Tất cả quyền được bảo lưu.</span>
+        <ul class="footer-social-links">
+          <li class="footer-social-item">
+            <a href="https://www.facebook.com/snapeditapp"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="footer-social-item">
+            <a href="https://x.com/snap_edit"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="footer-social-item">
+            <a href="https://www.linkedin.com/in/snapedit/"><i class="fab fa-linkedin-in"></i></a>
+          </li>
+          <li class="footer-social-item">
+            <a href="https://www.tiktok.com/@snapedit.app"><i class="fab fa-pinterest"></i></a>
+          </li>
+          <li class="footer-social-item">
+            <a href="https://www.tiktok.com/@snapedit.app"><i class="fa-brands fa-tiktok"></i></a>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <h2 class="section-title">Câu hỏi thường gặp</h2>
+    <script>
+      const navbar = document.getElementById("header");
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Có miễn phí để làm mờ nền trên SnapEdit không?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Có, công cụ làm mờ nền cơ bản của SnapEdit hoàn toàn miễn phí. Bạn có thể làm mờ nền của tối đa 5 hình ảnh mỗi ngày mà không cần đăng ký. Phiên bản nâng cấp của chúng tôi cung cấp các tùy chọn làm mờ nâng cao và không giới hạn số lượng hình ảnh.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Độ tương phản tối đa là bao nhiêu?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Công cụ của chúng tôi cung cấp thanh trượt để điều chỉnh độ làm mờ từ 1 đến 100. Mức 1 tạo ra hiệu ứng làm mờ rất nhẹ, trong khi mức 100 tạo ra hiệu ứng làm mờ mạnh mẽ, gần như hoàn toàn mờ đục phần nền.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Tôi có thể làm mờ nền ảnh iPhone không?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Chắc chắn! Công cụ làm mờ nền của SnapEdit hoạt động trên mọi thiết bị có kết nối internet, bao gồm cả iPhone. Ngoài ra, bạn cũng có thể tải xuống ứng dụng SnapEdit từ App Store để có trải nghiệm tốt hơn trên thiết bị di động.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Công cụ của bạn tốt trợ định dạng nào?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Công cụ làm mờ nền của chúng tôi hỗ trợ hầu hết các định dạng ảnh phổ biến, bao gồm JPEG/JPG, PNG, WEBP và TIFF. Bạn có thể tải xuống hình ảnh đã xử lý ở cùng định dạng với ảnh gốc hoặc chọn một định dạng khác nếu muốn.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Chức năng làm mờ hoạt động như thế nào?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Công cụ của chúng tôi sử dụng công nghệ AI để tự động nhận diện chủ thể chính trong hình ảnh và làm mờ phần nền. Thuật toán phân đoạn hình ảnh tiên tiến đảm bảo các cạnh của chủ thể được giữ nguyên sắc nét trong khi áp dụng hiệu ứng làm mờ cho phần còn lại của hình ảnh.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Có giới hạn kích thước tệp các chế độm làm mờ không?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Có một giới hạn kích thước tệp là 15MB cho người dùng miễn phí. Người dùng cao cấp có thể xử lý hình ảnh lên đến 50MB. Nếu hình ảnh của bạn lớn hơn, bạn có thể sử dụng công cụ nén ảnh của chúng tôi trước khi làm mờ nền.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Nền làm mờ có ảnh hưởng đến chất lượng ảnh không?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Không, công cụ làm mờ nền của chúng tôi duy trì chất lượng của hình ảnh gốc. Chúng tôi chỉ áp dụng hiệu ứng làm mờ cho nền mà không làm giảm độ phân giải hoặc chất lượng tổng thể của hình ảnh. Trên thực tế, đối tượng chính trong ảnh thường xuất hiện sắc nét hơn sau khi nền được làm mờ.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Tôi có thể tùy gốc sau khi làm mờ không?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Có, bạn có thể tinh chỉnh độ mờ sau khi thuật toán AI đã tự động xác định và làm mờ nền. Chúng tôi cung cấp nhiều điều khiển để điều chỉnh cường độ làm mờ, chọn kiểu làm mờ, và thậm chí tinh chỉnh vùng làm mờ nếu cần.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Scripts -->
-  <script src="../../assets/js/utils.js" type="module"></script>
-  <script src="../../assets/js/main.js" type="module"></script>
-  <script src="./script.js" type="module"></script>
-  <script>
-    // Load header and footer
-    fetch('../../layouts/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-      });
-
-    fetch('../../layouts/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
-  </script>
-</body>
+      function myFunction() {
+        if (window.scrollY > 0) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
 </html>
