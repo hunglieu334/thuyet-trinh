@@ -84,15 +84,21 @@ header .nav {
   width: 50vw;
 }
 
+header .nav .icon-item-nav {
+  /* padding: 5px 7px; */
+  margin-right: 10px;
+  /* background-color: #d8d8d8; */
+  border-radius: 5px;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #fff;
-  min-width: 200px; /* Độ rộng tối thiểu của dropdown */
+  min-width: 300px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .dropdown-content a {
@@ -100,11 +106,11 @@ header .nav {
   padding: 10px 15px;
   text-decoration: none;
   display: flex;
-  align-items: center; /* Căn giữa icon và text theo chiều dọc */
+  align-items: center;
 }
 
 .dropdown-content a:hover {
-  background-color: #e0e0e0;
+  color: #0051ee;
 }
 
 .dropdown:hover .dropdown-content {
@@ -268,6 +274,56 @@ header .user {
   border-radius: 20px;
 }
 
+/* faq */
+.faq {
+  background-color: #fff;
+  padding: 100px 0;
+}
+.faq-heading {
+  font-size: 60px;
+  font-weight: bold;
+  color: #1a1b2f;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.faq-answer {
+  padding: 15px;
+  font-weight: 400;
+  color: #5c5c5c;
+  border-top: 1px solid #dee2e6;
+  display: none;
+}
+
+.faq-toggle {
+  font-size: 1.5em;
+  color: #6c757d;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
 /* Footer */
 .footer {
   background-color: #1e293b;
@@ -372,4 +428,80 @@ header .user {
 
 .footer-social-item a:hover {
   color: #f8fafc;
+}
+
+
+@media (max-width: 768px) {
+  .blurFace {
+    flex-direction: column; /* Stack left and right on small screens */
+    align-items: center; /* Center items */
+  }
+  .blurFace-left,
+  .blurFace-right {
+    width: 100%; /* Full width on small screens */
+  }
+  .blurFace-left-content h1 {
+    font-size: 2.5rem; /* Smaller heading on small screens */
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Apply these styles on screens 768px wide or less */
+
+  .container {
+    padding: 0 15px; /* Less padding on small screens */
+  }
+
+  .blurFace {
+    flex-direction: column; /* Stack on small screens */
+    align-items: center; /* Center items */
+  }
+
+  .blurFace-left,
+  .blurFace-right {
+    width: 100%; /* Full width */
+  }
+
+  .blurFace-left-content h1 {
+    font-size: 2rem; /* Smaller heading */
+    text-align: center;
+  }
+
+  .howToBlur-list-items {
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+
+  .howToBlur-item {
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Add spacing */
+  }
+
+  .introBlur-items {
+    flex-direction: column; /* Stack on small screens */
+  }
+
+  .introBlur-items .item-title,
+  .introBlur-items .item-image {
+    width: 100%; /* Full width */
+    padding: 10px; /* Add padding */
+  }
+
+  .faq-heading {
+    font-size: 2rem; /* Smaller heading */
+  }
+
+  .footer {
+    padding: 50px 20px 20px; /* Less padding */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack copyright and social */
+    text-align: center;
+  }
+
+  .footer-social-links {
+    justify-content: center; /* Center icons */
+    margin-top: 10px;
+  }
 }
