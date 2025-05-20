@@ -1,0 +1,1193 @@
+/* style.css */
+
+/* Global styles */
+body {
+    font-family: sans-serif; /* Thay đổi nếu bạn muốn dùng font cụ thể */
+    margin: 0;
+    line-height: 1.6;
+    background: linear-gradient(99.41deg, #ecf5fb 2.33%, #f8f9fc 96.77%);
+    color: #373856;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ .hero-banner 
+{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    order-radius: 10px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px; /* Điều chỉnh kích thước logo */
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.download-app button {
+    background-color: #0051ee;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.qr-code,
+.download-icon {
+    width: 24px; /* Điều chỉnh kích thước biểu tượng */
+    margin-left: 0.5rem;
+}
+/* General Body Styles (if not already present) */
+body {
+    font-family: 'Arial', sans-serif; /* Hoặc font bạn đang sử dụng */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff; /* Hoặc màu nền chung của trang */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0; /* Đường viền mỏng dưới header */
+    position: sticky; /* Làm header dính khi cuộn */
+    top: 0;
+    z-index: 1000; /* Đảm bảo header luôn ở trên */
+    width: 100%;
+}
+
+.header-container {
+    max-width: 1200px; /* Hoặc chiều rộng tối đa bạn muốn */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container .logo {
+    height: 35px; /* Điều chỉnh chiều cao logo nếu cần */
+    display: block; /* Loại bỏ khoảng trắng thừa dưới ảnh */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px; /* Khoảng cách giữa các mục menu */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+    display: flex; /* Để căn chỉnh mũi tên dropdown */
+    align-items: center;
+}
+
+.main-nav a:hover,
+.main-nav a.active { /* Thêm class .active cho trang hiện tại nếu cần */
+    color: #007bff; /* Màu khi hover hoặc active */
+}
+
+.dropdown-arrow {
+    font-size: 0.7em; /* Kích thước mũi tên nhỏ hơn */
+    margin-left: 5px;
+    color: #777;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các action item */
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.language-icon {
+    height: 18px; /* Kích thước icon ngôn ngữ */
+    margin-right: 6px;
+}
+
+.language-selector .dropdown-arrow {
+    margin-left: 6px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.login-link:hover {
+    color: #007bff;
+}
+
+.cta-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.primary-button {
+    background-color: #007bff; /* Màu xanh của nút "Thử miễn phí" */
+    color: #fff;
+}
+
+.primary-button:hover {
+    background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
+}
+
+/* Mobile Menu Toggle - Initially hidden on larger screens */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Responsive adjustments for Header */
+@media (max-width: 992px) { /* Điều chỉnh breakpoint nếu cần */
+    .main-nav {
+        display: none; /* Ẩn menu chính trên mobile */
+        /* CSS để hiển thị menu khi toggle sẽ cần JavaScript */
+        position: absolute;
+        top: 100%; /* Ngay dưới header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    .main-nav.active { /* Class này sẽ được thêm bởi JS */
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Xếp chồng các mục menu */
+        align-items: center;
+        gap: 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        padding: 12px 20px;
+        display: block; /* Để link chiếm toàn bộ chiều rộng của li */
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+     .main-nav li:last-child a {
+        border-bottom: none;
+    }
+
+    .header-actions .language-selector,
+    .header-actions .login-link {
+        display: none; /* Có thể ẩn bớt các action trên mobile nếu không gian chật */
+    }
+    /* Hoặc chỉ ẩn một vài cái */
+    /* .language-selector { display: none; } */
+
+
+    .mobile-menu-toggle {
+        display: block; /* Hiển thị nút hamburger */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    .logo-container .logo {
+        height: 30px;
+    }
+    /* Có thể ẩn thêm các action nếu cần */
+    .header-actions .login-link {
+        display: none;
+    }
+     .header-actions .language-selector {
+        display: none; /* Ẩn luôn language selector trên mobile nhỏ */
+    }
+    .cta-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+/* Main Content - Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.upload-button {
+    background-color: #0051ee;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.example-images {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.example-images button {
+    margin: 0 0.5rem;
+}
+
+.hero-grid-container {
+    display: flex;
+    justify-content: space-between; /* Phân bổ không gian giữa hai cột */
+    align-items: flex-start; /* Căn chỉnh các mục ở đầu cột */
+    gap: 20px; /* Khoảng cách giữa hai cột */
+}
+
+.hero-left-content {
+    flex-basis: 50%; /* Chiếm 50% chiều rộng */
+    /* Thêm các style khác nếu cần, ví dụ: padding */
+}
+
+.hero-right-content {
+    flex-basis: 45%; /* Chiếm 45% chiều rộng, để lại chút không gian cho gap */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các mục con theo chiều dọc */
+    align-items: center; /* Căn giữa các mục con theo chiều ngang */
+    /* Thêm các style khác nếu cần, ví dụ: padding, border */
+}
+
+.hero-banner {
+    width: 100%; /* Làm cho banner chiếm toàn bộ chiều rộng của cột trái */
+    max-width: 500px; /* Giới hạn chiều rộng tối đa của banner */
+    height: auto; /* Duy trì tỷ lệ khung hình */
+    margin-top: 20px; /* Khoảng cách phía trên banner */
+}
+
+.upload-button {
+    /* Thêm style cho nút tải lên nếu cần */
+    padding: 10px 20px;
+    background-color: #007bff; /* Màu ví dụ */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px; /* Khoảng cách dưới nút */
+}
+
+.upload-button .upload-icon {
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.hero-right-content p {
+    margin: 5px 0; /* Khoảng cách cho các đoạn text */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    color: #555; /* Màu chữ xám hơn */
+}
+
+.example-images-prompt {
+    margin-top: 15px !important; /* Tăng khoảng cách phía trên dòng chữ này */
+    margin-bottom: 10px !important; /* Khoảng cách dưới dòng chữ này */
+    font-weight: bold; /* Làm đậm chữ */
+}
+
+.example-images {
+    display: flex; /* Sắp xếp các hình ảnh ví dụ trên một hàng */
+    gap: 10px; /* Khoảng cách giữa các hình ảnh ví dụ */
+    margin-top: 10px; /* Khoảng cách phía trên các hình ảnh ví dụ */
+}
+
+.example-images button {
+    background: none;
+    border: 1px solid #ccc; /* Thêm viền nhẹ cho button */
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px; /* Bo tròn góc nhẹ */
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài nếu có bo tròn */
+}
+
+.example-images button img {
+    width: 60px; /* Đặt kích thước chiều rộng cố định cho hình ảnh ví dụ */
+    height: 60px; /* Đặt kích thước chiều cao cố định cho hình ảnh ví dụ */
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung mà không bị méo */
+    display: block; /* Loại bỏ khoảng trắng thừa dưới ảnh */
+}
+
+/* Styles for the "features" section (How-to steps) */
+.features {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff; /* Assuming a white background for the section based on image */
+    max-width: 980px; /* Thêm max-width để giới hạn chiều rộng */
+    margin-left: auto; /* Căn giữa section */
+    margin-right: auto; /* Căn giữa section */
+}
+
+.features h2 {
+    font-size: 32px; /* Larger font size for the main title */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.features > p { /* The introductory paragraph */
+    font-size: 16px;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 40px auto; /* Center paragraph and add bottom margin */
+    line-height: 1.6;
+}
+
+.feature-steps-container {
+    display: flex;
+    justify-content: space-between; /* Space items out */
+    gap: 30px; /* Gap between step items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.feature-step {
+    flex: 1 1 calc(33.333% - 30px); /* Distribute space, accounting for gap. Adjust basis if needed. */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: #f7f5ff; /* Light lavender background for each step card, as per image */
+    border-radius: 12px; /* Rounded corners for the card */
+    text-align: left;
+    overflow: hidden; /* To ensure child elements like images respect border-radius */
+    margin-bottom: 20px; /* Space if items wrap to new line */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Softer shadow */
+}
+
+.feature-step img {
+    width: 100%; /* Làm cho hình ảnh chiếm toàn bộ chiều rộng của thẻ .feature-step */
+    height: 160px; /* Giữ nguyên chiều cao đã điều chỉnh */
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung mà không bị méo */
+    display: block; /* Loại bỏ khoảng trắng thừa dưới ảnh */
+    border-bottom: none; /* Loại bỏ hoặc đặt thành 1px solid #eee nếu muốn có đường kẻ mỏng */
+}
+
+.feature-step-content {
+    padding: 20px;
+}
+
+.feature-step h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.feature-step h3 span { /* The number */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dee7ff; /* Light blue background for number */
+    color: #0940c7; /* Darker blue for number text */
+    min-width: 28px; /* Ensure circle/rounded square shape */
+    height: 28px;
+    border-radius: 8px; /* Rounded square */
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.feature-step p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments for the steps */
+@media (max-width: 992px) { /* Tablet */
+    .feature-steps-container {
+        justify-content: space-around; /* Center items better when they start to wrap */
+    }
+    .feature-step {
+        flex-basis: calc(50% - 20px); /* 2 columns, adjust gap consideration */
+    }
+    .features h2 {
+        font-size: 28px;
+    }
+    .features > p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) { /* Mobile */
+    .feature-steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-step {
+        flex-basis: 100%;
+        max-width: 380px; /* Max width for single column items */
+    }
+     .features h2 {
+        font-size: 24px;
+    }
+}
+
+/* Styles for the "how-to" section */
+.how-to {
+    text-align: center; /* Căn giữa h2.cach và p.cach */
+    padding: 50px 20px; /* Đệm tương tự như các section khác */
+    background-color: #fff; /* Nền trắng cho section, giống như trong hình */
+    max-width: 980px; /* Thêm max-width để giới hạn chiều rộng */
+    margin-left: auto; /* Căn giữa section */
+    margin-right: auto; /* Căn giữa section */
+}
+
+.how-to h2.cach {
+    font-size: 32px; /* Giảm kích thước font cho tiêu đề chính */
+    font-weight: bold;
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    color: #333; /* Màu chữ tối */
+}
+
+.how-to p.cach { /* Đoạn mô tả giới thiệu của section how-to */
+    font-size: 16px; /* Giảm kích thước font */
+    color: #555; /* Màu chữ xám */
+    max-width: 750px; /* Điều chỉnh giới hạn chiều rộng nếu cần */
+    margin-left: auto; /* Căn giữa đoạn văn bản */
+    margin-right: auto; /* Căn giữa đoạn văn bản */
+    margin-bottom: 40px; /* Khoảng cách trước khi đến các bước */
+    line-height: 1.6;
+}
+
+
+/* Điều chỉnh responsive cho tiêu đề của section.how-to */
+@media (max-width: 802px) {
+    .how-to h2.cach {
+        font-size: 28px; /* Sẽ là 28px nếu base là 32px */
+    }
+    .how-to p.cach {
+        font-size: 15px; /* Sẽ là 15px nếu base là 16px */
+    }
+}
+
+@media (max-width: 600px) { /* Bạn có thể cần điều chỉnh breakpoint này nếu cần */
+    .how-to h2.cach {
+        font-size: 24px; /* Sẽ là 24px nếu base là 32px */
+    }
+}
+
+/* Download App Section */
+.download-app-section {
+    background-color: #f0f2f5; /* Màu nền xám nhạt giống hình */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.download-app-content {
+    max-width: 700px; /* Giới hạn chiều rộng nội dung */
+    margin: 0 auto; /* Căn giữa nội dung */
+}
+
+.download-app-section h2 {
+    font-size: 28px; /* Kích thước font cho tiêu đề */
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.download-app-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các nút tải xuống */
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.download-buttons a img {
+    height: 50px; /* Điều chỉnh chiều cao của các badge tải xuống */
+    width: auto; /* Để chiều rộng tự điều chỉnh theo tỷ lệ */
+    transition: transform 0.2s ease-in-out;
+}
+
+.download-buttons a:hover img {
+    transform: scale(1.05); /* Hiệu ứng hover nhẹ */
+}
+
+/* Nếu bạn thêm QR code vào section này */
+.qr-code-container {
+    margin-top: 30px;
+}
+
+.section-qr-code {
+    width: 120px; /* Kích thước QR code trong section */
+    height: 120px;
+    margin: 0 auto 10px auto; /* Căn giữa QR code */
+    display: block;
+}
+
+.qr-code-container p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 0;
+}
+
+
+/* Responsive adjustments for Download App Section */
+@media (max-width: 768px) {
+    .download-app-section h2 {
+        font-size: 24px;
+    }
+    .download-app-section p {
+        font-size: 15px;
+    }
+    .download-buttons a img {
+        height: 45px; /* Giảm kích thước badge trên mobile */
+    }
+}
+/* Image Converter Features Section */
+.image-converter-features {
+    padding: 60px 20px;
+    background-color: #f8f9fc; /* Màu nền nhạt cho section */
+    text-align: center; /* Căn giữa tiêu đề chính */
+}
+
+.image-converter-features h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.image-converter-features h2 .highlight-text {
+    color: #007bff; /* Màu xanh cho phần highlight */
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1000px; /* Giới hạn chiều rộng của mỗi feature item */
+    margin: 0 auto 60px auto; /* Căn giữa và tạo khoảng cách dưới */
+    text-align: left; /* Căn trái cho nội dung bên trong feature-item */
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse; /* Đảo ngược thứ tự cho các item có class 'reverse' */
+}
+
+.feature-text {
+    flex-basis: 50%;
+}
+
+.feature-text h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.feature-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.try-now-button {
+    display: inline-flex; /* Để nút vừa với nội dung và có thể căn chỉnh icon */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #007bff; /* Màu chữ của nút */
+    border: 1px solid #007bff; /* Viền nút */
+    border-radius: 25px; /* Bo tròn nhiều */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.try-now-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.try-now-button .arrow-icon {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.try-now-button:hover .arrow-icon {
+    transform: translateX(3px);
+}
+
+.feature-image-container {
+    flex-basis: 45%;
+}
+
+.feature-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Bo tròn góc hình ảnh */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+}
+
+/* Responsive adjustments for Image Converter Features */
+@media (max-width: 768px) {
+    .image-converter-features h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .feature-item,
+    .feature-item.reverse {
+        flex-direction: column; /* Xếp chồng lên nhau trên mobile */
+        text-align: center; /* Căn giữa text khi xếp chồng */
+        gap: 30px;
+    }
+    .feature-text {
+        flex-basis: 100%;
+        order: 2; /* Đảm bảo text luôn ở dưới hình trên mobile nếu cần */
+    }
+    .feature-item.reverse .feature-text {
+        order: 2; /* Vẫn giữ text ở dưới */
+    }
+    .feature-image-container {
+        flex-basis: 100%;
+        order: 1; /* Hình ảnh lên trên */
+        max-width: 400px; /* Giới hạn chiều rộng ảnh trên mobile */
+        margin: 0 auto;
+    }
+    .feature-text h3 {
+        font-size: 22px;
+    }
+    .feature-text p {
+        font-size: 15px;
+    }
+    .try-now-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+/* Supported Formats Section */
+.supported-formats {
+    background-color: #2c2c4d; /* Màu nền tối giống hình */
+    color: #fff; /* Màu chữ trắng */
+    padding: 60px 20px;
+    text-align: center; /* Căn giữa nút "Thử ngay" */
+}
+
+.formats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Tạo lưới 2 cột */
+    gap: 45px 30px; /* Khoảng cách giữa các hàng và cột */
+    max-width: 900px; /* Giới hạn chiều rộng của lưới */
+    margin: 0 auto 50px auto; /* Căn giữa lưới và tạo khoảng cách dưới */
+    text-align: left; /* Căn trái cho nội dung bên trong các item */
+}
+
+.format-item {
+    display: flex;
+    align-items: flex-start; /* Căn icon và text ở đầu */
+    gap: 20px; /* Khoảng cách giữa icon và text */
+}
+
+.format-item img { /* Kiểu cho icon */
+    width: 60px; /* Kích thước icon, điều chỉnh nếu cần */
+    height: 60px;
+    flex-shrink: 0; /* Ngăn icon bị co lại */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); 
+}
+
+.format-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.format-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0; /* Màu chữ xám nhạt hơn cho mô tả */
+}
+
+/* Kiểu riêng cho nút "Thử ngay" trên nền tối */
+.try-now-button.dark-bg-button {
+    background-color: #fff; /* Nền trắng */
+    color: #2c2c4d; /* Chữ màu tối */
+    border: 1px solid #fff; /* Viền trắng (có thể không cần nếu nền đã trắng) */
+    padding: 12px 25px; /* Tăng padding một chút */
+}
+
+.try-now-button.dark-bg-button:hover {
+    background-color: #e0e0e0; /* Nền xám nhạt khi hover */
+    color: #2c2c4d;
+    border-color: #e0e0e0;
+}
+
+.try-now-button.dark-bg-button .arrow-icon {
+    /* Mũi tên sẽ tự động có màu của text */
+}
+
+
+/* Responsive adjustments for Supported Formats */
+@media (max-width: 768px) {
+    .formats-grid {
+        grid-template-columns: 1fr; /* Chuyển sang 1 cột trên mobile */
+        gap: 30px;
+    }
+    .format-item img {
+        width: 40px;
+        height: 40px;
+    }
+    .format-text h3 {
+        font-size: 17px;
+    }
+    .format-text p {
+        font-size: 13px;
+    }
+    .try-now-button.dark-bg-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+/* FAQ Section */
+.faq {
+    background-color: #f8f9fa; /* Màu nền xám nhạt */
+    padding: 60px 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px; /* Giới hạn chiều rộng của danh sách FAQ */
+    margin: 0 auto;
+}
+
+.faq li {
+    border-bottom: 1px solid #e0e0e0; /* Đường kẻ phân cách */
+}
+
+.faq li:last-child {
+    border-bottom: none; /* Loại bỏ đường kẻ cho mục cuối cùng */
+}
+
+.faq .faq-toggle {
+    display: flex;
+    justify-content: space-between; /* Đẩy câu hỏi và icon ra hai bên */
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0; /* Padding trên dưới cho button */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.faq .faq-toggle h3 {
+    font-size: 18px;
+    font-weight: 600; /* Hơi đậm hơn bình thường */
+    color: #333;
+    margin: 0;
+    flex-grow: 1; /* Cho phép text câu hỏi chiếm không gian */
+}
+
+.faq .faq-icon {
+    font-size: 24px;
+    color: #555;
+    margin-left: 15px; /* Khoảng cách giữa text và icon */
+    transition: transform 0.3s ease;
+}
+
+/* Kiểu cho phần nội dung câu trả lời (mặc định ẩn) */
+.faq .faq-content {
+    padding: 0 0 20px 0; /* Padding dưới và không có padding trên/trái/phải ban đầu */
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    display: none; /* Ẩn nội dung trả lời ban đầu */
+}
+
+.faq .faq-content p {
+    margin: 0;
+}
+
+/* Kiểu khi một mục FAQ được mở (bạn sẽ cần JavaScript để thêm/xóa class 'active') */
+.faq li.active .faq-toggle .faq-icon {
+    transform: rotate(45deg); /* Biến dấu + thành dấu x */
+}
+
+.faq li.active .faq-content {
+    display: block; /* Hiển thị nội dung khi active */
+}
+
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .faq h2 {
+        font-size: 28px;
+    }
+    .faq .faq-toggle h3 {
+        font-size: 17px;
+    }
+    .faq .faq-content {
+        font-size: 14px;
+    }
+}
+/* FAQ Section */
+.faq {
+    background-color: #f8f9fa; /* Màu nền xám nhạt */
+    padding: 60px 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.faq ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px; /* Giới hạn chiều rộng của danh sách FAQ */
+    margin: 0 auto;
+}
+
+.faq li {
+    border-bottom: 1px solid #e0e0e0; /* Đường kẻ phân cách */
+}
+
+.faq li:last-child {
+    border-bottom: none; /* Loại bỏ đường kẻ cho mục cuối cùng */
+}
+
+.faq .faq-toggle {
+    display: flex;
+    justify-content: space-between; /* Đẩy câu hỏi và icon ra hai bên */
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0; /* Padding trên dưới cho button */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.faq .faq-toggle h3 {
+    font-size: 18px;
+    font-weight: 600; /* Hơi đậm hơn bình thường */
+    color: #333;
+    margin: 0;
+    flex-grow: 1; /* Cho phép text câu hỏi chiếm không gian */
+}
+
+.faq .faq-icon {
+    font-size: 24px;
+    color: #555;
+    margin-left: 15px; /* Khoảng cách giữa text và icon */
+    transition: transform 0.3s ease;
+}
+
+/* Kiểu cho phần nội dung câu trả lời (mặc định ẩn) */
+.faq .faq-content {
+    padding: 0 0 20px 0; /* Padding dưới và không có padding trên/trái/phải ban đầu */
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    display: none; /* Ẩn nội dung trả lời ban đầu */
+}
+
+.faq .faq-content p {
+    margin: 0;
+}
+
+/* Kiểu khi một mục FAQ được mở (bạn sẽ cần JavaScript để thêm/xóa class 'active') */
+.faq li.active .faq-toggle .faq-icon {
+    transform: rotate(45deg); /* Biến dấu + thành dấu x */
+}
+
+.faq li.active .faq-content {
+    display: block; /* Hiển thị nội dung khi active */
+}
+
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .faq h2 {
+        font-size: 28px;
+    }
+    .faq .faq-toggle h3 {
+        font-size: 17px;
+    }
+    .faq .faq-content {
+        font-size: 14px;
+    }
+}
+/* Footer Styles */
+footer {
+    background-color: #1a1f2c; /* Màu nền tối của footer */
+    color: #adb5bd; /* Màu chữ mặc định nhạt hơn cho footer */
+    padding: 60px 20px 30px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-about {
+    flex-basis: 25%; /* Điều chỉnh tỷ lệ nếu cần */
+    min-width: 250px;
+}
+
+.footer-logo {
+    height: 35px; /* Điều chỉnh kích thước logo footer */
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+.footer-links-section {
+    display: flex;
+    gap: 30px; /* Khoảng cách giữa các cột link */
+    flex-wrap: wrap;
+    flex-grow: 1; /* Cho phép phần này chiếm không gian còn lại */
+}
+
+.footer-column {
+    flex: 1; /* Chia đều không gian cho các cột */
+    min-width: 150px; /* Chiều rộng tối thiểu cho mỗi cột */
+}
+
+.footer-column h4 {
+    color: #fff; /* Màu trắng cho tiêu đề cột */
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-app-download {
+    flex-basis: 20%; /* Điều chỉnh tỷ lệ nếu cần */
+    min-width: 200px;
+}
+
+.footer-app-download h4 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-app-download img {
+    height: 40px; /* Kích thước badge tải ứng dụng */
+    margin-bottom: 10px;
+    display: block; /* Để các badge xếp chồng lên nhau */
+}
+
+.footer-bottom {
+    border-top: 1px solid #343a40; /* Đường kẻ phân cách */
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Cho phép xuống dòng */
+    gap: 15px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #868e96;
+}
+
+.social-media a {
+    margin-left: 15px;
+    display: inline-block; /* Để có thể đặt kích thước */
+}
+
+.social-media img {
+    height: 20px; /* Kích thước icon mạng xã hội */
+    width: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.social-media a:hover img {
+    opacity: 1;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 992px) {
+    .footer-top {
+        flex-direction: column; /* Xếp chồng các phần tử chính trong footer-top */
+        align-items: flex-start;
+    }
+    .footer-about,
+    .footer-app-download {
+        flex-basis: 100%; /* Chiếm toàn bộ chiều rộng khi xếp chồng */
+        margin-bottom: 30px;
+    }
+    .footer-links-section {
+        width: 100%; /* Đảm bảo các cột link chiếm toàn bộ chiều rộng */
+        justify-content: space-between; /* Phân bổ các cột link */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links-section {
+        flex-direction: column; /* Xếp chồng các cột link trên mobile */
+        gap: 20px;
+    }
+    .footer-column {
+        min-width: 100%; /* Mỗi cột link chiếm toàn bộ chiều rộng */
+        margin-bottom: 20px;
+    }
+    .footer-bottom {
+        flex-direction: column; /* Xếp chồng copyright và social media */
+        align-items: center; /* Căn giữa */
+        text-align: center;
+    }
+    .social-media a {
+        margin: 0 8px; /* Điều chỉnh khoảng cách icon */
+    }
+    .social-media {
+        margin-top: 15px;
+    }
+}
