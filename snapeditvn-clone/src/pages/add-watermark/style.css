@@ -30,7 +30,8 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Header Styles */
+/*--------HEADER--------*/
+/* Phần tử <header class="header">: Header cố định trên cùng */
 .header {
   position: fixed;
   top: 0;
@@ -39,33 +40,24 @@ body {
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   z-index: 1000;
+  height: 72px;
 }
 
-/* Đảm bảo header có chiều cao cố định */
-.header {
-  height: 72px; /* Cố định chiều cao */
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  z-index: 1000;
-}
-
-/* Thêm khoảng cách trên cho phần nội dung chính, tránh bị header che */
+/* <section class="intro-section container">: Đẩy nội dung xuống để không bị header che */
 .intro-section.container {
-  padding-top: 90px; /* Tăng hơn chiều cao header 1 chút cho thoáng */
+  padding-top: 90px;
 }
 
-/* Tương tự cho các section khác có thể bị header đè */
+/* Các section bên dưới cũng cần đẩy nhẹ để tránh trùng với header */
 .how-section,
 .download-app,
 .features-dark,
 .faq-section,
 .footer {
-  padding-top: 40px; /* hoặc margin-top nếu muốn cách đều */
+  padding-top: 40px;
 }
 
-
+/* <div class="header-content">: Chứa logo, menu và hành động - sắp xếp ngang */
 .header-content {
   display: flex;
   align-items: center;
@@ -73,6 +65,7 @@ body {
   height: 72px;
 }
 
+/* <a class="logo">: Phần logo gồm hình và chữ SnapEdit */
 .logo {
   display: flex;
   align-items: center;
@@ -83,11 +76,13 @@ body {
   gap: 0.5rem;
 }
 
+/* <img> trong .logo: Kích thước cố định cho hình logo */
 .logo img {
   width: 36px;
   height: 36px;
 }
 
+/* <nav class="nav-menu"> ul: Hiển thị các mục menu theo hàng ngang */
 .nav-menu ul {
   display: flex;
   align-items: center;
@@ -95,10 +90,12 @@ body {
   list-style: none;
 }
 
+/* <li> trong menu: Cho phép định vị dropdown theo vị trí cha */
 .nav-menu ul li {
   position: relative;
 }
 
+/* <a> trong menu: Style cho từng link menu chính */
 .nav-menu ul li a {
   color: #111827;
   font-weight: 500;
@@ -108,17 +105,19 @@ body {
   transition: background 0.2s;
 }
 
+/* Hover và active: làm nổi bật link khi rê chuột hoặc đang chọn */
 .nav-menu ul li a:hover,
 .nav-menu ul li a.active {
   background: #f3f4f6;
 }
 
-/* Dropdown */
+/* Dropdown mũi tên trong menu */
 .dropdown .arrow {
   font-size: 0.8em;
   margin-left: 0.25em;
 }
 
+/* Menu con xổ xuống trong phần "Sản phẩm AI" */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -132,12 +131,14 @@ body {
   z-index: 10;
 }
 
+/* Hiển thị dropdown khi hover, focus, hoặc có class 'open' */
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu,
 .dropdown.open .dropdown-menu {
   display: block;
 }
 
+/* Link bên trong dropdown */
 .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1.25rem;
@@ -150,17 +151,19 @@ body {
   background: #f3f4f6;
 }
 
-/* Header Actions */
+/* Hành động bên phải header: chọn ngôn ngữ, đăng nhập, nút dùng thử */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1.25rem;
 }
 
+/* Vùng chọn ngôn ngữ */
 .language-switcher {
   position: relative;
 }
 
+/* Nút bấm hiện ngôn ngữ hiện tại */
 .language-btn {
   display: flex;
   align-items: center;
@@ -179,11 +182,13 @@ body {
   background: #f3f4f6;
 }
 
+/* Icon cờ trong nút ngôn ngữ */
 .language-btn img {
   width: 20px;
   height: 20px;
 }
 
+/* Menu ngôn ngữ xổ xuống */
 .language-menu {
   display: none;
   position: absolute;
@@ -197,11 +202,13 @@ body {
   z-index: 10;
 }
 
+/* Hiển thị khi mở menu ngôn ngữ */
 .language-switcher.open .language-menu,
 .language-switcher:focus-within .language-menu {
   display: block;
 }
 
+/* Mục chọn ngôn ngữ trong menu */
 .language-menu li a {
   display: flex;
   align-items: center;
@@ -216,11 +223,13 @@ body {
   background: #f3f4f6;
 }
 
+/* Icon cờ nhỏ trong menu */
 .language-menu img {
   width: 18px;
   height: 18px;
 }
 
+/* Link "Đăng nhập" */
 .login-link {
   color: #111827;
   font-weight: 500;
@@ -234,6 +243,7 @@ body {
   background: #f3f4f6;
 }
 
+/* Nút "Thử miễn phí" màu nổi bật */
 .free-btn {
   background: var(--primary-color);
   color: #fff;
@@ -250,8 +260,7 @@ body {
   transform: translateY(-2px);
 }
 
-
-/* Buttons */
+/* Nút chung dùng cho toàn bộ trang */
 .btn {
   display: inline-block;
   padding: 0.85rem 2.2rem;
@@ -264,6 +273,7 @@ body {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
+/* Nút chính màu xanh (btn-primary) */
 .btn-primary {
   background: var(--primary-color);
   color: #fff;
@@ -276,6 +286,7 @@ body {
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
 }
 
+/* Nút phụ trắng viền xanh (btn-secondary) */
 .btn-secondary {
   background: #fff;
   color: var(--primary-color);
@@ -288,58 +299,50 @@ body {
   border-color: var(--secondary-color);
 }
 
-/* INTRO SECTION */
+
+
+/* Main intro section */
 .intro-section {
   max-width: 1200px;
   margin: 40px auto 60px;
-  padding: 0 20px;
   display: flex;
   gap: 40px;
+  padding: 0 20px;
   flex-wrap: wrap;
   align-items: center;
 }
-
 .intro-left {
   flex: 1 1 400px;
   max-width: 600px;
 }
-
 .intro-left h1 {
   font-weight: 900;
   font-size: 3rem;
   line-height: 1.1;
   margin-bottom: 15px;
   border-bottom: 4px solid #7de3f0;
-  padding-bottom: 8px;
   display: inline-block;
-  color: #111827;
+  padding-bottom: 8px;
 }
-
 .intro-left p {
   font-size: 1.125rem;
   color: #3a3a4d;
   margin-bottom: 25px;
-  line-height: 1.5;
 }
-
 .image-group {
   position: relative;
   display: flex;
   gap: 20px;
 }
-
 .image-group img {
   width: 200px;
   border-radius: 16px;
   box-shadow: 0 20px 50px rgb(0 0 0 / 0.12);
-  object-fit: cover;
 }
-
 .image-group img.right {
   position: relative;
   z-index: 10;
 }
-
 .emoji {
   position: absolute;
   top: -20px;
@@ -348,10 +351,9 @@ body {
   user-select: none;
   animation: bounce 2s infinite ease-in-out;
 }
-
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-10px);}
 }
 
 /* Upload box */
@@ -363,7 +365,6 @@ body {
   flex: 0 1 300px;
   text-align: center;
 }
-
 .upload-box button {
   background: #3b82f6;
   color: white;
@@ -376,23 +377,19 @@ body {
   transition: background 0.3s;
   margin-bottom: 16px;
 }
-
 .upload-box button:hover {
   background: #2563eb;
 }
-
 .upload-hint {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 12px;
 }
-
 .upload-images {
   display: flex;
   gap: 12px;
   justify-content: center;
 }
-
 .upload-images img {
   width: 40px;
   height: 40px;
@@ -402,26 +399,23 @@ body {
   box-shadow: 0 4px 10px rgb(0 0 0 / 0.08);
   transition: transform 0.2s;
 }
-
 .upload-images img:hover {
   transform: scale(1.1);
 }
 
-/* HOW IT WORKS SECTION */
+/* How it works section */
 .how-section {
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 20px;
   text-align: center;
 }
-
 .how-section h2 {
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 16px;
   color: #20273b;
 }
-
 .how-cards {
   margin-top: 30px;
   display: flex;
@@ -429,7 +423,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .card {
   background: #f4f5f9;
   padding: 20px;
@@ -439,32 +432,27 @@ body {
   box-shadow: 0 20px 30px rgb(0 0 0 / 0.1);
   transition: transform 0.3s ease;
 }
-
 .card:hover {
   transform: translateY(-10px);
 }
-
 .card img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 18px;
-  object-fit: cover;
 }
-
 .card h3 {
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 10px;
   color: #20273b;
 }
-
 .card p {
   font-size: 0.95rem;
   color: #555;
   line-height: 1.4;
 }
 
-/* DOWNLOAD APP SECTION */
+/* Download app banner */
 .download-app {
   background: #e4e6f5;
   padding: 50px 40px;
@@ -505,7 +493,8 @@ body {
   opacity: 0.8;
 }
 
-/* FEATURES DARK SECTION */
+
+/* Features dark section */
 .features-dark {
   background: #20273b;
   color: white;
@@ -582,20 +571,19 @@ body {
   color: #20273b;
 }
 
-/* FAQ SECTION */
+
+/* FAQ section */
 .faq-section {
   max-width: 900px;
   margin: 80px auto;
   padding: 0 20px;
 }
-
 .faq-section h2 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 30px;
   text-align: center;
 }
-
 .faq-item {
   border-bottom: 1px solid #ddd;
   padding: 15px 0;
@@ -603,13 +591,10 @@ body {
   position: relative;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s ease;
 }
-
 .faq-item:hover {
   color: #3b82f6;
 }
-
 .faq-item::after {
   content: '+';
   position: absolute;
@@ -617,14 +602,10 @@ body {
   top: 15px;
   font-weight: 700;
   font-size: 1.5rem;
-  transition: transform 0.3s ease;
 }
-
 .faq-item.open::after {
   content: '-';
-  transform: rotate(180deg);
 }
-
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -635,13 +616,11 @@ body {
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
 .faq-item.open .faq-answer {
   max-height: 500px;
 }
 
-
-/* FOOTER */
+/* FOOTER: chân trang */
 .footer {
   background: #1a1a1a;
   color: #ffffff;
@@ -655,6 +634,7 @@ body {
   margin-bottom: 3rem;
 }
 
+/* Phần thương hiệu trong footer */
 .footer-brand {
   max-width: 300px;
 }
@@ -669,6 +649,7 @@ body {
   line-height: 1.6;
 }
 
+/* Nhóm liên kết trong footer */
 .footer-links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -699,6 +680,7 @@ body {
   color: #ffffff;
 }
 
+/* Phần cuối footer với bản quyền */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -707,7 +689,7 @@ body {
   border-top: 1px solid #333333;
 }
 
-/* Animations */
+/* Các hiệu ứng fade-in dùng chung */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -719,12 +701,14 @@ body {
   }
 }
 
+/* Áp animation fadeIn cho các phần cụ thể */
 .hero-content,
 .tool-card,
 .feature-card {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+/* Delay cho từng tool card để hiệu ứng đẹp hơn */
 .tool-card:nth-child(2) {
   animation-delay: 0.2s;
 }
@@ -737,7 +721,41 @@ body {
   animation-delay: 0.6s;
 }
 
+/* Khoảng cách margin dưới cho tất cả section */
 section {
   margin-bottom: 64px;
 }
 
+.modal-hidden {
+  display: none;
+}
+
+.modal-visible {
+  display: flex;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #444;
+  cursor: pointer;
+  user-select: none;
+}
